@@ -226,7 +226,7 @@ public class Consultas extends javax.swing.JFrame {
         jTabbedPane1.addTab("CONSULTAR POR NOMBRE", jPanel7);
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel16.setText("Piso:");
+        jLabel16.setText("Habitacion:");
 
         jButtonPorHabitacion.setText("CONSULTAR");
 
