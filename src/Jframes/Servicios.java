@@ -5,11 +5,21 @@
  */
 package Jframes;
 
-/**
- *
- * @author Fer
- */
+import controlMySql.MySqlConn;
+import javax.swing.JOptionPane;
+
+
+
 public class Servicios extends javax.swing.JFrame {
+    
+    MySqlConn conn=new MySqlConn();
+    private int sum=0;
+    
+    
+    public Servicios(MySqlConn conn){
+        this.conn=conn;
+        initComponents();
+    }
 
     /**
      * Creates new form Servicios
@@ -38,6 +48,7 @@ public class Servicios extends javax.swing.JFrame {
         jSpinnerHabitacion = new javax.swing.JSpinner();
         jButtonConfirmar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        jButtonLimpiar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +57,11 @@ public class Servicios extends javax.swing.JFrame {
 
         jCheckBoxCuart.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxCuart.setText("Servicio a Cuarto");
+        jCheckBoxCuart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxCuartActionPerformed(evt);
+            }
+        });
 
         jCheckBoxBar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxBar.setText("Servicio al Bar");
@@ -63,8 +79,25 @@ public class Servicios extends javax.swing.JFrame {
         jLabel2.setText("Habitacion:");
 
         jButtonConfirmar.setText("CONFIRMAR");
+        jButtonConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmarActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setText("SALIR");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+
+        jButtonLimpiar.setText("LIMPIAR");
+        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,13 +120,16 @@ public class Servicios extends javax.swing.JFrame {
                                 .addComponent(jCheckBoxCuart))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(221, 221, 221)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButtonConfirmar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))))
+                        .addComponent(jLabel1)))
                 .addContainerGap(249, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jButtonConfirmar)
+                .addGap(93, 93, 93)
+                .addComponent(jButtonLimpiar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,11 +150,13 @@ public class Servicios extends javax.swing.JFrame {
                 .addComponent(jCheckBoxSpa)
                 .addGap(39, 39, 39)
                 .addComponent(jCheckBoxNiñera)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConfirmar)
-                    .addComponent(jButtonSalir))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonConfirmar)
+                        .addComponent(jButtonSalir))
+                    .addComponent(jButtonLimpiar))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,6 +172,51 @@ public class Servicios extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCheckBoxCuartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxCuartActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jCheckBoxCuartActionPerformed
+
+    private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
+        // TODO add your handling code here:
+
+        if(this.jCheckBoxCuart.isSelected()){
+                sum+=300;
+            } if(this.jCheckBoxBar.isSelected()){
+                sum+=400;
+            } if(this.jCheckBoxTintoreria.isSelected()){
+                sum+=150;
+            }if(this.jCheckBoxSpa.isSelected()){
+                sum+=1200;
+            } if(this.jCheckBoxNiñera.isSelected()){
+                sum+=600;
+            }
+        JOptionPane.showMessageDialog(this,"Total: "+sum);
+        
+        
+        String parte1="Insert into servicios (suma)" +"VALUES (";
+        String parte2="'"+sum+"')";
+        String query=parte1+parte2;
+        
+        int j=this.conn.Update(query);//Ejecuta accion de alta en la BD
+        System.out.println("Numero de registros afectados por la accion"+j);
+    }//GEN-LAST:event_jButtonConfirmarActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+        // TODO add your handling code here:
+        this.jCheckBoxCuart.setSelected(false);
+        this.jCheckBoxBar.setSelected(false);
+        this.jCheckBoxTintoreria.setSelected(false);
+        this.jCheckBoxSpa.setSelected(false);
+        this.jCheckBoxNiñera.setSelected(false);
+        sum=0;
+    }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,6 +255,7 @@ public class Servicios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConfirmar;
+    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JCheckBox jCheckBoxBar;
     private javax.swing.JCheckBox jCheckBoxCuart;
