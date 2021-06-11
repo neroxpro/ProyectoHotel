@@ -5,17 +5,36 @@
  */
 package Jframes;
 
+import controlMySql.MySqlConn;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fer
  */
 public class Consultas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Consultas2
-     */
+    MySqlConn conn=new MySqlConn();
+    
+    public Consultas(MySqlConn conn){
+        this.conn=conn;
+        
+        initComponents();
+        
+    }
+    
     public Consultas() {
         initComponents();
+        jTextFieldHabit.setEditable(false);
+        jTextFieldPiso.setEditable(false);
+        jTextFieldHuesped.setEditable(false);
     }
 
     /**
@@ -44,12 +63,13 @@ public class Consultas extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextFieldHabit = new javax.swing.JTextField();
         jTextFieldPiso = new javax.swing.JTextField();
+        jButtonPorNombre1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
         jButtonPorHabitacion = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jTextFieldHuesped = new javax.swing.JTextField();
+        jTextFieldHab = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
@@ -171,6 +191,11 @@ public class Consultas extends javax.swing.JFrame {
         jLabel6.setText("Nombre:");
 
         jButtonPorNombre.setText("CONSULTAR");
+        jButtonPorNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPorNombreActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Habitacion:");
@@ -178,29 +203,39 @@ public class Consultas extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel8.setText("Piso:");
 
+        jButtonPorNombre1.setText("LIMPIAR");
+        jButtonPorNombre1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPorNombre1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonPorNombre)
-                .addGap(307, 307, 307))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                        .addGap(154, 154, 154)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6))
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldHabit, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldHabit, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(283, 283, 283)
+                        .addComponent(jButtonPorNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonPorNombre1)))
                 .addContainerGap(209, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -210,9 +245,11 @@ public class Consultas extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(jButtonPorNombre)
-                .addGap(71, 71, 71)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonPorNombre)
+                    .addComponent(jButtonPorNombre1))
+                .addGap(81, 81, 81)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldHabit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,7 +257,7 @@ public class Consultas extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
                     .addComponent(jTextFieldPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CONSULTAR POR NOMBRE", jPanel7);
@@ -229,6 +266,11 @@ public class Consultas extends javax.swing.JFrame {
         jLabel16.setText("Habitacion:");
 
         jButtonPorHabitacion.setText("CONSULTAR");
+        jButtonPorHabitacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPorHabitacionActionPerformed(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel17.setText("Huesped:");
@@ -242,8 +284,8 @@ public class Consultas extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(297, 297, 297)
                         .addComponent(jLabel16)
-                        .addGap(79, 79, 79)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldHab, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(317, 317, 317)
                         .addComponent(jButtonPorHabitacion))
@@ -252,22 +294,22 @@ public class Consultas extends javax.swing.JFrame {
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
+                .addGap(137, 137, 137)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addGap(42, 42, 42)
+                    .addComponent(jLabel16)
+                    .addComponent(jTextFieldHab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48)
                 .addComponent(jButtonPorHabitacion)
                 .addGap(48, 48, 48)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jTextFieldHuesped, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("CONSULTAR POR HABITACION", jPanel8);
@@ -506,6 +548,57 @@ public class Consultas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonPorNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorNombreActionPerformed
+        try {
+
+            String query="select piso,noHab from usuarios where nombre = '"+this.jTextFieldNombre.getText().trim()+"'";
+            PreparedStatement pstmt=conn.conn.prepareStatement(query);
+            ResultSet rs=pstmt.executeQuery();
+            if(rs.next()){
+                String s1=rs.getString(1);
+                String s2=rs.getString(2);
+                jTextFieldHabit.setText(s1);
+                jTextFieldPiso.setText(s2);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"huesped no registrado");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+
+
+    }//GEN-LAST:event_jButtonPorNombreActionPerformed
+
+    private void jButtonPorNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorNombre1ActionPerformed
+        // TODO add your handling code here:
+        this.jTextFieldNombre.setText("");
+        this.jTextFieldPiso.setText("");
+        this.jTextFieldHabit.setText("");
+    }//GEN-LAST:event_jButtonPorNombre1ActionPerformed
+
+    private void jButtonPorHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorHabitacionActionPerformed
+        // TODO add your handling code here:
+        try {
+
+            String query="select nombre from usuarios where noHab = '"+this.jTextFieldHab.getText().trim()+"'";
+            PreparedStatement pstmt=conn.conn.prepareStatement(query);
+            ResultSet rs=pstmt.executeQuery();
+            if(rs.next()){
+                String s1=rs.getString(1);
+                jTextFieldHuesped.setText(s1);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Habitacion no ocupada");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButtonPorHabitacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -548,6 +641,7 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonHistoricoIngresos;
     private javax.swing.JButton jButtonPorHabitacion;
     private javax.swing.JButton jButtonPorNombre;
+    private javax.swing.JButton jButtonPorNombre1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -581,7 +675,6 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
@@ -589,6 +682,7 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextFieldHab;
     private javax.swing.JTextField jTextFieldHabit;
     private javax.swing.JTextField jTextFieldHuesped;
     private javax.swing.JTextField jTextFieldNombre;

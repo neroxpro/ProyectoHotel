@@ -30,10 +30,10 @@ public class Checkout extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jSpinnerNumHabitacion = new javax.swing.JSpinner();
         jButtonRecibo = new javax.swing.JButton();
         jButtonSalida = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
+        jTextFieldNumHab = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,6 +44,11 @@ public class Checkout extends javax.swing.JFrame {
         jLabel2.setText("Numero de Habitacion:");
 
         jButtonRecibo.setText("RECIBO");
+        jButtonRecibo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReciboActionPerformed(evt);
+            }
+        });
 
         jButtonSalida.setText("SALIDA");
 
@@ -61,9 +66,9 @@ public class Checkout extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(211, 211, 211)
                         .addComponent(jLabel2)
-                        .addGap(61, 61, 61)
-                        .addComponent(jSpinnerNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(41, 41, 41)
+                        .addComponent(jTextFieldNumHab, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(258, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jButtonRecibo)
@@ -78,11 +83,11 @@ public class Checkout extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(159, 159, 159)
+                .addGap(166, 166, 166)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jSpinnerNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                    .addComponent(jTextFieldNumHab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRecibo)
                     .addComponent(jButtonSalida)
@@ -103,6 +108,11 @@ public class Checkout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReciboActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonReciboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,6 +156,6 @@ public class Checkout extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinnerNumHabitacion;
+    private javax.swing.JTextField jTextFieldNumHab;
     // End of variables declaration//GEN-END:variables
 }

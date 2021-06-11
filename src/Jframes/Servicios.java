@@ -45,10 +45,10 @@ public class Servicios extends javax.swing.JFrame {
         jCheckBoxSpa = new javax.swing.JCheckBox();
         jCheckBoxNiñera = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
-        jSpinnerHabitacion = new javax.swing.JSpinner();
         jButtonConfirmar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jButtonLimpiar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,12 +112,11 @@ public class Servicios extends javax.swing.JFrame {
                             .addComponent(jCheckBoxBar)
                             .addComponent(jCheckBoxSpa)
                             .addComponent(jCheckBoxNiñera)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jSpinnerHabitacion))
-                                .addComponent(jCheckBoxCuart))))
+                            .addComponent(jCheckBoxCuart)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(221, 221, 221)
                         .addComponent(jLabel1)))
@@ -136,10 +135,10 @@ public class Servicios extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jSpinnerHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBoxCuart)
                 .addGap(37, 37, 37)
@@ -156,7 +155,7 @@ public class Servicios extends javax.swing.JFrame {
                         .addComponent(jButtonConfirmar)
                         .addComponent(jButtonSalir))
                     .addComponent(jButtonLimpiar))
-                .addGap(0, 29, Short.MAX_VALUE))
+                .addGap(0, 35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -194,10 +193,9 @@ public class Servicios extends javax.swing.JFrame {
             }
         JOptionPane.showMessageDialog(this,"Total: "+sum);
         
+        String query="update ingresos set suma="+sum+"";
         
-        String parte1="Insert into servicios (suma)" +"VALUES (";
-        String parte2="'"+sum+"')";
-        String query=parte1+parte2;
+
         
         int j=this.conn.Update(query);//Ejecuta accion de alta en la BD
         System.out.println("Numero de registros afectados por la accion"+j);
@@ -265,6 +263,6 @@ public class Servicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner jSpinnerHabitacion;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
