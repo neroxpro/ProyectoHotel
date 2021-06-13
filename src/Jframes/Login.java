@@ -37,6 +37,11 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtonEntrar.setText("ENTRAR");
+        jButtonEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonEntrarMousePressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel1.setText("Usuario:");
@@ -92,6 +97,11 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonEntrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEntrarMousePressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonEntrarMousePressed
 
     /**
      * @param args the command line arguments

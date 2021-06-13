@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,6 +31,7 @@ public class Consultas extends javax.swing.JFrame {
         initComponents();
         
     }
+    
     
     public Consultas() {
         initComponents();
@@ -83,7 +86,7 @@ public class Consultas extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableConsultas = new javax.swing.JTable();
         jButtonHistoricoHuesped = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -389,7 +392,7 @@ public class Consultas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("DISPONIBILIDAD POR PISO", jPanel9);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableConsultas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -408,9 +411,19 @@ public class Consultas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableConsultas);
 
         jButtonHistoricoHuesped.setText("CONSULTAR");
+        jButtonHistoricoHuesped.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonHistoricoHuespedMousePressed(evt);
+            }
+        });
+        jButtonHistoricoHuesped.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHistoricoHuespedActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -599,6 +612,42 @@ public class Consultas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonPorHabitacionActionPerformed
 
+    private void jButtonHistoricoHuespedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHistoricoHuespedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonHistoricoHuespedActionPerformed
+
+    private void jButtonHistoricoHuespedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonHistoricoHuespedMousePressed
+        // TODO add your handling code here:
+        String query = "select * from usuarios ORDER BY nombre ASC";
+        this.conn.Consult(query);
+        int n = 0;
+        try{
+            this.conn.rs.last();//se posiciona en el ultimo de la tabla
+            n = this.conn.rs.getRow();//regresa el numero actual del registro
+            this.conn.rs.first();//se posiciona en el primer registro de la tabla
+        }catch(Exception e){
+           System.out.println("Error#1..."); 
+        }
+        
+        if(n != 0){//hay datos
+            Object datos[][] = new Object[n][2];
+            for(int i=0 ; i<n ; i++){
+                try{
+                    datos[i][0] = this.conn.rs.getString(1);
+                    datos[i][1] = this.conn.rs.getInt(5);
+                    this.conn.rs.next();//avanza al siguiente registro
+                }catch(Exception e){
+                    System.out.println("Error#2...");
+                }
+            }
+            String columnas[] = {"Nombre del usuario","Numero de habitacion"};
+            jTableConsultas.setModel(new DefaultTableModel(datos,columnas));
+        }else{
+            JOptionPane.showMessageDialog(this, "No hay datos...");
+        }
+    }//GEN-LAST:event_jButtonHistoricoHuespedMousePressed
+
+
     /**
      * @param args the command line arguments
      */
@@ -677,7 +726,7 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableConsultas;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
