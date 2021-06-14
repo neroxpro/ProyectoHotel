@@ -17,6 +17,7 @@ public class MySqlConn {
         //Conectar con mysql...
         try {
             //cargando el driver
+            
             Class.forName("com.mysql.jdbc.Driver");
          /*   String connectionUrl =
                             "jdbc:mysql://148.211.152.233/progsist?"

@@ -34,6 +34,7 @@ public final class Mapa extends javax.swing.JFrame {
     }
     
     public Mapa() {
+        this(1,"");
         initComponents();
     }
 

@@ -86,9 +86,9 @@ public class Consultas extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jTextFieldSencilla = new javax.swing.JTextField();
+        jTextFieldDeluxe = new javax.swing.JTextField();
+        jTextFieldSuits = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -118,11 +118,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(190, 200, 151, 19);
         jPanel2.add(jTextField1);
-        jTextField1.setBounds(360, 200, 151, 22);
+        jTextField1.setBounds(360, 200, 151, 20);
 
         jButtonHistoricoIngresos.setText("Consultar");
         jPanel2.add(jButtonHistoricoIngresos);
-        jButtonHistoricoIngresos.setBounds(340, 300, 87, 25);
+        jButtonHistoricoIngresos.setBounds(340, 300, 79, 23);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel2.add(jLabel23);
@@ -168,9 +168,9 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre);
-        jButtonPorNombre.setBounds(280, 190, 103, 25);
+        jButtonPorNombre.setBounds(280, 190, 93, 23);
         jPanel7.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(251, 106, 285, 22);
+        jTextFieldNombre.setBounds(251, 106, 285, 20);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Habitacion:");
@@ -182,9 +182,9 @@ public class Consultas extends javax.swing.JFrame {
         jPanel7.add(jLabel8);
         jLabel8.setBounds(340, 370, 36, 19);
         jPanel7.add(jTextFieldHabit);
-        jTextFieldHabit.setBounds(390, 340, 87, 22);
+        jTextFieldHabit.setBounds(390, 340, 87, 20);
         jPanel7.add(jTextFieldPiso);
-        jTextFieldPiso.setBounds(390, 370, 87, 22);
+        jTextFieldPiso.setBounds(390, 370, 87, 20);
 
         jButtonPorNombre1.setText("LIMPIAR");
         jButtonPorNombre1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +193,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre1);
-        jButtonPorNombre1.setBounds(410, 190, 79, 25);
+        jButtonPorNombre1.setBounds(410, 190, 73, 23);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel7.add(jLabel27);
@@ -215,16 +215,16 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButtonPorHabitacion);
-        jButtonPorHabitacion.setBounds(317, 207, 103, 25);
+        jButtonPorHabitacion.setBounds(317, 207, 93, 23);
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel17.setText("Huesped:");
         jPanel8.add(jLabel17);
         jLabel17.setBounds(268, 281, 67, 19);
         jPanel8.add(jTextFieldHuesped);
-        jTextFieldHuesped.setBounds(340, 280, 243, 22);
+        jTextFieldHuesped.setBounds(340, 280, 243, 20);
         jPanel8.add(jTextFieldHab);
-        jTextFieldHab.setBounds(388, 137, 46, 22);
+        jTextFieldHab.setBounds(388, 137, 46, 20);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel8.add(jLabel28);
@@ -242,8 +242,13 @@ public class Consultas extends javax.swing.JFrame {
         jSpinner2.setBounds(396, 112, 40, 33);
 
         jButton1.setText("CONSULTAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel9.add(jButton1);
-        jButton1.setBounds(321, 176, 103, 25);
+        jButton1.setBounds(321, 176, 93, 23);
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,12 +270,12 @@ public class Consultas extends javax.swing.JFrame {
         jLabel22.setText("Suits:");
         jPanel9.add(jLabel22);
         jLabel22.setBounds(340, 410, 39, 19);
-        jPanel9.add(jTextField2);
-        jTextField2.setBounds(390, 330, 39, 22);
-        jPanel9.add(jTextField3);
-        jTextField3.setBounds(390, 370, 39, 22);
-        jPanel9.add(jTextField4);
-        jTextField4.setBounds(390, 410, 39, 22);
+        jPanel9.add(jTextFieldSencilla);
+        jTextFieldSencilla.setBounds(390, 330, 39, 20);
+        jPanel9.add(jTextFieldDeluxe);
+        jTextFieldDeluxe.setBounds(390, 370, 39, 20);
+        jPanel9.add(jTextFieldSuits);
+        jTextFieldSuits.setBounds(390, 410, 39, 20);
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel9.add(jLabel29);
@@ -316,7 +321,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButtonHistoricoHuesped);
-        jButtonHistoricoHuesped.setBounds(325, 13, 103, 25);
+        jButtonHistoricoHuesped.setBounds(325, 13, 93, 23);
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel10.add(jLabel30);
@@ -410,14 +415,14 @@ public class Consultas extends javax.swing.JFrame {
     private void jButtonPorNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorNombreActionPerformed
         try {
 
-            String query="select piso,noHab from usuarios where nombre = '"+this.jTextFieldNombre.getText().trim()+"'";
+            String query = "select  usuarios.id, ocupaciones.habitaciones_numero, habitaciones.piso from usuarios,ocupaciones, habitaciones  where usuarios.id=ocupaciones.usuarios_id and habitaciones.numero=ocupaciones.habitaciones_numero  and usuarios.nombre='"+this.jTextFieldNombre.getText().trim()+"'";
             PreparedStatement pstmt=conn.conn.prepareStatement(query);
             ResultSet rs=pstmt.executeQuery();
             if(rs.next()){
-                String s1=rs.getString(1);
-                String s2=rs.getString(2);
-                jTextFieldHabit.setText(s1);
-                jTextFieldPiso.setText(s2);
+                int habitacion = rs.getInt(2);
+                int piso = rs.getInt(3);
+                jTextFieldHabit.setText(String.valueOf(habitacion));
+                jTextFieldPiso.setText(String.valueOf(piso));
             }
             else{
                 JOptionPane.showMessageDialog(null,"huesped no registrado");
@@ -440,9 +445,9 @@ public class Consultas extends javax.swing.JFrame {
 
     private void jButtonPorHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPorHabitacionActionPerformed
         // TODO add your handling code here:
-        try {
+         try {
 
-            String query="select nombre from usuarios where noHab = '"+this.jTextFieldHab.getText().trim()+"'";
+            String query="select usuarios.nombre,ocupaciones.habitaciones_numero,habitaciones.ocupacion from usuarios,ocupaciones,habitaciones where habitaciones.ocupacion=1 and  ocupaciones.habitaciones_numero= '"+this.jTextFieldHab.getText().trim()+"'";
             PreparedStatement pstmt=conn.conn.prepareStatement(query);
             ResultSet rs=pstmt.executeQuery();
             if(rs.next()){
@@ -464,7 +469,7 @@ public class Consultas extends javax.swing.JFrame {
 
     private void jButtonHistoricoHuespedMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonHistoricoHuespedMousePressed
         // TODO add your handling code here:
-        String query = "select * from usuarios ORDER BY nombre ASC";
+        String query = "select usuarios.nombre,ocupaciones.habitaciones_numero,usuarios.id from usuarios,ocupaciones WHERE usuarios.id=ocupaciones.usuarios_id  ORDER BY nombre ASC ";
         this.conn.Consult(query);
         int n = 0;
         try{
@@ -480,7 +485,7 @@ public class Consultas extends javax.swing.JFrame {
             for(int i=0 ; i<n ; i++){
                 try{
                     datos[i][0] = this.conn.rs.getString(1);
-                    datos[i][1] = this.conn.rs.getInt(5);
+                    datos[i][1] = this.conn.rs.getInt(2);
                     this.conn.rs.next();//avanza al siguiente registro
                 }catch(Exception e){
                     System.out.println("Error#2...");
@@ -492,6 +497,27 @@ public class Consultas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No hay datos...");
         }
     }//GEN-LAST:event_jButtonHistoricoHuespedMousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+                
+        try {
+
+            String query= "select habitaciones.numero from habitaciones	WHERE	piso=1 and  tipo='sencilla'";
+            PreparedStatement pstmt=conn.conn.prepareStatement(query);
+            ResultSet rs=pstmt.executeQuery();
+            if(rs.next()){
+                String s1=rs.getString(1);
+                jTextFieldSencilla.setText(s1);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Habitacion no ocupada");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     /**
@@ -582,13 +608,13 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTableConsultas;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextFieldDeluxe;
     private javax.swing.JTextField jTextFieldHab;
     private javax.swing.JTextField jTextFieldHabit;
     private javax.swing.JTextField jTextFieldHuesped;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldPiso;
+    private javax.swing.JTextField jTextFieldSencilla;
+    private javax.swing.JTextField jTextFieldSuits;
     // End of variables declaration//GEN-END:variables
 }
