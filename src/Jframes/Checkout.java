@@ -34,14 +34,21 @@ public class Checkout extends javax.swing.JFrame {
         jButtonSalida = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jTextFieldNumHab = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(null);
+
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("CHECK-OUT");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(297, 13, 141, 29);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Numero de Habitacion:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(211, 209, 160, 19);
 
         jButtonRecibo.setText("RECIBO");
         jButtonRecibo.addActionListener(new java.awt.event.ActionListener() {
@@ -49,51 +56,22 @@ public class Checkout extends javax.swing.JFrame {
                 jButtonReciboActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonRecibo);
+        jButtonRecibo.setBounds(130, 450, 75, 25);
 
         jButtonSalida.setText("SALIDA");
+        jPanel1.add(jButtonSalida);
+        jButtonSalida.setBounds(320, 450, 75, 25);
 
         jButtonSalir.setText("SALIR");
+        jPanel1.add(jButtonSalir);
+        jButtonSalir.setBounds(530, 450, 67, 25);
+        jPanel1.add(jTextFieldNumHab);
+        jTextFieldNumHab.setBounds(412, 208, 64, 22);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(jLabel2)
-                        .addGap(41, 41, 41)
-                        .addComponent(jTextFieldNumHab, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(258, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jButtonRecibo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
-                .addComponent(jButtonSalida)
-                .addGap(199, 199, 199)
-                .addComponent(jButtonSalir)
-                .addGap(91, 91, 91))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(166, 166, 166)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldNumHab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRecibo)
-                    .addComponent(jButtonSalida)
-                    .addComponent(jButtonSalir))
-                .addGap(34, 34, 34))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(1, -4, 750, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,6 +133,7 @@ public class Checkout extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldNumHab;
     // End of variables declaration//GEN-END:variables

@@ -59,65 +59,109 @@ public class Checkin extends javax.swing.JFrame {
         jDateChooserSalida = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
         jTextFielDias = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(null);
+
         jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Nombre:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(91, 67, 60, 19);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("CHECK-IN ");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(302, 13, 121, 29);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setText("Ciudad:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(96, 118, 55, 19);
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("Fecha de Ingreso:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(26, 177, 125, 19);
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel5.setText("Fecha Salida:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(348, 177, 97, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setText("Habitacion:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(72, 229, 79, 19);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Total de Ocupantes:");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(12, 329, 139, 19);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tipo de Habitacion:");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(30, 280, 136, 19);
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel9.setText("Piso:");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(409, 229, 36, 19);
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel10.setText("Personas Extra:");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(348, 329, 111, 19);
+        jPanel1.add(jTextFieldNombre);
+        jTextFieldNombre.setBounds(185, 66, 394, 22);
 
         jComboBoxCiudad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jComboBoxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Ensenada", "Mexicali", "Tijuana", "La Paz", "Los Cabos", "Campeche", "Ciudad del Carmen", "Tapachula", "Tuxtla Gutiérrez", "Chihuahua", "Juárez", "La Laguna", "Monclova-Frontera", "Piedras Negras", "Saltillo", "Colima-Villa de Álvarez", "Manzanillo", "Tecomán", "Valle de México", "Durango", "Celaya", "Guanajuato", "Irapuato", "La Piedad-Pénjamo", "León", "Salamanca", "San Francisco del Rincón", "Acapulco", "Chilpancingo", "Pachuca", "Tula", "Tulancingo", "Guadalajara", "Ocotlán", "Puerto Vallarta", "Morelia", "Uruapan", "Zamora-Jacona", "Cuautla", "Cuernavaca", "Toluca", "Tepic", "Monterrey", "Oaxaca", "Tehuantepec-Salina Cruz", "Puebla-Tlaxcala", "Tehuacán", "Querétaro", "San Juan del Río", "Cancún", "Chetumal", "Rioverde-Ciudad Fernández", "San Luis Potosí-Soledad", "Culiacán", "Los Mochis", "Mazatlán", "Ciudad Obregón", "Guaymas", "Hermosillo", "Cárdenas", "Villahermosa", "Ciudad Victoria", "Matamoros", "Nuevo Laredo", "Reynosa-Río Bravo", "Tampico-Pánuco", "Tlaxcala-Apizaco", "Coatzacoalcos", "Córdoba", "Minatitlán", "Orizaba", "Poza Rica", "Veracruz", "Xalapa", "Mérida", "Zacatecas-Guadalupe", "Otra" }));
+        jPanel1.add(jComboBoxCiudad);
+        jComboBoxCiudad.setBounds(169, 118, 197, 21);
 
         jSpinnerHabitacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jSpinnerHabitacionMouseClicked(evt);
             }
         });
+        jPanel1.add(jSpinnerHabitacion);
+        jSpinnerHabitacion.setBounds(244, 222, 47, 34);
+        jPanel1.add(jSpinnerPiso);
+        jSpinnerPiso.setBounds(530, 222, 47, 34);
 
         buttonGroup2.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSencilla.setText("Sencilla");
+        jPanel1.add(jRadioButtonHabSencilla);
+        jRadioButtonHabSencilla.setBounds(216, 274, 75, 25);
 
         buttonGroup2.add(jRadioButtonHabDeluxe);
         jRadioButtonHabDeluxe.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabDeluxe.setText("Deluxe");
+        jPanel1.add(jRadioButtonHabDeluxe);
+        jRadioButtonHabDeluxe.setBounds(348, 274, 69, 25);
 
         buttonGroup2.add(jRadioButtonHabSuits);
         jRadioButtonHabSuits.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSuits.setText("Suit");
+        jPanel1.add(jRadioButtonHabSuits);
+        jRadioButtonHabSuits.setBounds(530, 274, 51, 25);
 
         jComboBoxTotOcupantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", " " }));
+        jPanel1.add(jComboBoxTotOcupantes);
+        jComboBoxTotOcupantes.setBounds(257, 328, 34, 22);
 
         jComboBoxPerExtra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", " " }));
+        jPanel1.add(jComboBoxPerExtra);
+        jComboBoxPerExtra.setBounds(547, 328, 34, 22);
 
         jButtonRecibo.setText("RECIBO");
+        jPanel1.add(jButtonRecibo);
+        jButtonRecibo.setBounds(130, 430, 75, 25);
 
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -128,154 +172,36 @@ public class Checkin extends javax.swing.JFrame {
                 jButtonRegistrarMousePressed(evt);
             }
         });
+        jPanel1.add(jButtonRegistrar);
+        jButtonRegistrar.setBounds(315, 427, 99, 25);
 
         jButtonSalir.setText("SALIR");
+        jPanel1.add(jButtonSalir);
+        jButtonSalir.setBounds(550, 420, 67, 25);
+        jPanel1.add(jDateChooserIngreso);
+        jDateChooserIngreso.setBounds(169, 177, 108, 22);
+        jPanel1.add(jDateChooserSalida);
+        jDateChooserSalida.setBounds(463, 174, 108, 22);
 
         jLabel11.setText("Días que se va a quedar: ");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(158, 379, 147, 16);
+        jPanel1.add(jTextFielDias);
+        jTextFielDias.setBounds(317, 376, 76, 22);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonRecibo)
-                    .addComponent(jLabel7))
-                .addGap(164, 164, 164)
-                .addComponent(jButtonRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonSalir)
-                .addGap(93, 93, 93))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(75, 75, 75)
-                                        .addComponent(jSpinnerHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jRadioButtonHabSencilla, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jComboBoxTotOcupantes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(57, 57, 57)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(85, 85, 85)
-                                                .addComponent(jSpinnerPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jDateChooserSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButtonHabDeluxe)
-                                            .addComponent(jLabel10))
-                                        .addGap(71, 71, 71)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jRadioButtonHabSuits)
-                                            .addComponent(jComboBoxPerExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(395, 395, 395)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFielDias, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateChooserIngreso, jDateChooserSalida});
-
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jComboBoxCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jDateChooserIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jDateChooserSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel4))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel5)))))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel9)
-                    .addComponent(jSpinnerHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinnerPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jRadioButtonHabSencilla)
-                    .addComponent(jRadioButtonHabDeluxe)
-                    .addComponent(jRadioButtonHabSuits))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBoxTotOcupantes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10)
-                    .addComponent(jComboBoxPerExtra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jTextFielDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRecibo)
-                    .addComponent(jButtonRegistrar)
-                    .addComponent(jButtonSalir))
-                .addGap(61, 61, 61))
-        );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateChooserIngreso, jDateChooserSalida});
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(0, 0, 770, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -381,6 +307,7 @@ public class Checkin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
