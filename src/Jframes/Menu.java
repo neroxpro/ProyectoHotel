@@ -32,6 +32,8 @@ public class Menu extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,17 +48,27 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton2.setText("CHECK-OUT");
         jPanel1.add(jButton2);
-        jButton2.setBounds(291, 219, 177, 37);
+        jButton2.setBounds(290, 190, 177, 37);
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton3.setText("CONSULTAS");
         jPanel1.add(jButton3);
-        jButton3.setBounds(291, 316, 177, 37);
+        jButton3.setBounds(290, 250, 177, 37);
 
         jButton4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jButton4.setText("SALIR");
         jPanel1.add(jButton4);
-        jButton4.setBounds(328, 411, 99, 37);
+        jButton4.setBounds(330, 440, 99, 37);
+
+        jButton5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jButton5.setText("SERVICIOS");
+        jPanel1.add(jButton5);
+        jButton5.setBounds(290, 320, 180, 37);
+
+        jButton6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jButton6.setText("GALERIA");
+        jPanel1.add(jButton6);
+        jButton6.setBounds(290, 380, 180, 37);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco5.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -66,11 +78,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,6 +128,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
