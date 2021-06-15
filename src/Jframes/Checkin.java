@@ -37,7 +37,6 @@ public class Checkin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -56,7 +55,6 @@ public class Checkin extends javax.swing.JFrame {
         jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jDateChooserIngreso = new com.toedter.calendar.JDateChooser();
-        jDateChooserSalida = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
         jTextFielDias = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -83,12 +81,7 @@ public class Checkin extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("Fecha de Ingreso:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(26, 177, 125, 19);
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel5.setText("Fecha Salida:");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(348, 177, 97, 19);
+        jLabel4.setBounds(210, 180, 125, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setText("Habitacion:");
@@ -172,6 +165,11 @@ public class Checkin extends javax.swing.JFrame {
                 jButtonRegistrarMousePressed(evt);
             }
         });
+        jButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegistrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonRegistrar);
         jButtonRegistrar.setBounds(315, 427, 99, 25);
 
@@ -179,9 +177,7 @@ public class Checkin extends javax.swing.JFrame {
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(550, 420, 67, 25);
         jPanel1.add(jDateChooserIngreso);
-        jDateChooserIngreso.setBounds(169, 177, 108, 22);
-        jPanel1.add(jDateChooserSalida);
-        jDateChooserSalida.setBounds(463, 174, 108, 22);
+        jDateChooserIngreso.setBounds(350, 180, 108, 22);
 
         jLabel11.setText("Días que se va a quedar: ");
         jPanel1.add(jLabel11);
@@ -259,6 +255,10 @@ public class Checkin extends javax.swing.JFrame {
         a = new Altas(nom,tham,origen,ingreso,piso,lp,total,pextras,nhab,dias,cu);
     }//GEN-LAST:event_jButtonRegistrarMousePressed
 
+    private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegistrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -303,7 +303,6 @@ public class Checkin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxPerExtra;
     private javax.swing.JComboBox<String> jComboBoxTotOcupantes;
     private com.toedter.calendar.JDateChooser jDateChooserIngreso;
-    private com.toedter.calendar.JDateChooser jDateChooserSalida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -311,7 +310,6 @@ public class Checkin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
