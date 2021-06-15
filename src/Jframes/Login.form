@@ -44,6 +44,7 @@
             <Property name="text" type="java.lang.String" value="ENTRAR"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEntrarMouseClicked"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonEntrarMousePressed"/>
           </Events>
           <Constraints>
