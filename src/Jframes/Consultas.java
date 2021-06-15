@@ -16,6 +16,12 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -56,10 +62,13 @@ public class Consultas extends javax.swing.JFrame {
         jButtonHistoricoIngresos = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -118,11 +127,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(190, 200, 151, 19);
         jPanel2.add(jTextField1);
-        jTextField1.setBounds(360, 200, 151, 20);
+        jTextField1.setBounds(360, 200, 151, 22);
 
         jButtonHistoricoIngresos.setText("Consultar");
         jPanel2.add(jButtonHistoricoIngresos);
-        jButtonHistoricoIngresos.setBounds(340, 300, 79, 23);
+        jButtonHistoricoIngresos.setBounds(340, 300, 87, 25);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel2.add(jLabel23);
@@ -130,15 +139,43 @@ public class Consultas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("HISTORICO INGRESOS", jPanel2);
 
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanel3MouseReleased(evt);
+            }
+        });
+        jPanel3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel3KeyPressed(evt);
+            }
+        });
         jPanel3.setLayout(null);
+
+        jLabel32.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel32.setText("PRESIONA EN CUALQUIER LUGAR ");
+        jPanel3.add(jLabel32);
+        jLabel32.setBounds(140, 170, 490, 35);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel3.add(jLabel24);
         jLabel24.setBounds(0, 0, 750, 510);
 
-        jTabbedPane1.addTab("HISTORICO OCUPACION", jPanel3);
+        jTabbedPane1.addTab("PORCENTAJE DE OCUPACION", jPanel3);
 
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
         jPanel4.setLayout(null);
+
+        jLabel33.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel33.setText("PRESIONA EN CUALQUIER LUGAR ");
+        jPanel4.add(jLabel33);
+        jLabel33.setBounds(140, 170, 520, 35);
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel4.add(jLabel25);
@@ -146,7 +183,17 @@ public class Consultas extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("HABITACIONES", jPanel4);
 
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel5MouseClicked(evt);
+            }
+        });
         jPanel5.setLayout(null);
+
+        jLabel34.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        jLabel34.setText("PRESIONA EN CUALQUIER LUGAR ");
+        jPanel5.add(jLabel34);
+        jLabel34.setBounds(140, 170, 540, 35);
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel5.add(jLabel26);
@@ -168,9 +215,9 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre);
-        jButtonPorNombre.setBounds(280, 190, 93, 23);
+        jButtonPorNombre.setBounds(280, 190, 103, 25);
         jPanel7.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(251, 106, 285, 20);
+        jTextFieldNombre.setBounds(251, 106, 285, 22);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Habitacion:");
@@ -182,9 +229,9 @@ public class Consultas extends javax.swing.JFrame {
         jPanel7.add(jLabel8);
         jLabel8.setBounds(340, 370, 36, 19);
         jPanel7.add(jTextFieldHabit);
-        jTextFieldHabit.setBounds(390, 340, 87, 20);
+        jTextFieldHabit.setBounds(390, 340, 87, 22);
         jPanel7.add(jTextFieldPiso);
-        jTextFieldPiso.setBounds(390, 370, 87, 20);
+        jTextFieldPiso.setBounds(390, 370, 87, 22);
 
         jButtonPorNombre1.setText("LIMPIAR");
         jButtonPorNombre1.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +240,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre1);
-        jButtonPorNombre1.setBounds(410, 190, 73, 23);
+        jButtonPorNombre1.setBounds(410, 190, 79, 25);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel7.add(jLabel27);
@@ -215,16 +262,16 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButtonPorHabitacion);
-        jButtonPorHabitacion.setBounds(317, 207, 93, 23);
+        jButtonPorHabitacion.setBounds(317, 207, 103, 25);
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel17.setText("Huesped:");
         jPanel8.add(jLabel17);
         jLabel17.setBounds(268, 281, 67, 19);
         jPanel8.add(jTextFieldHuesped);
-        jTextFieldHuesped.setBounds(340, 280, 243, 20);
+        jTextFieldHuesped.setBounds(340, 280, 243, 22);
         jPanel8.add(jTextFieldHab);
-        jTextFieldHab.setBounds(388, 137, 46, 20);
+        jTextFieldHab.setBounds(388, 137, 46, 22);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel8.add(jLabel28);
@@ -248,7 +295,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel9.add(jButton1);
-        jButton1.setBounds(321, 176, 93, 23);
+        jButton1.setBounds(321, 176, 103, 25);
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,11 +318,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel9.add(jLabel22);
         jLabel22.setBounds(340, 410, 39, 19);
         jPanel9.add(jTextFieldSencilla);
-        jTextFieldSencilla.setBounds(390, 330, 39, 20);
+        jTextFieldSencilla.setBounds(390, 330, 39, 22);
         jPanel9.add(jTextFieldDeluxe);
-        jTextFieldDeluxe.setBounds(390, 370, 39, 20);
+        jTextFieldDeluxe.setBounds(390, 370, 39, 22);
         jPanel9.add(jTextFieldSuits);
-        jTextFieldSuits.setBounds(390, 410, 39, 20);
+        jTextFieldSuits.setBounds(390, 410, 39, 22);
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel9.add(jLabel29);
@@ -321,7 +368,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButtonHistoricoHuesped);
-        jButtonHistoricoHuesped.setBounds(325, 13, 93, 23);
+        jButtonHistoricoHuesped.setBounds(325, 13, 103, 25);
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel10.add(jLabel30);
@@ -342,9 +389,9 @@ public class Consultas extends javax.swing.JFrame {
         jLabel3.setBounds(47, 247, 101, 19);
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel4.setText("Suit: $4500");
+        jLabel4.setText("Suite: $4500");
         jPanel6.add(jLabel4);
-        jLabel4.setBounds(68, 349, 80, 19);
+        jLabel4.setBounds(68, 349, 130, 19);
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel5.setText("Precios");
@@ -519,6 +566,131 @@ public class Consultas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jPanel3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3MouseReleased
+
+    private void jPanel3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel3KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3KeyPressed
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        // TODO add your handling code here:
+        
+               try {
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        String senci = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='sencilla'";
+         this.conn.Consult(senci);
+        String del = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='deluxe'";
+         this.conn.Consult(del);
+        String sui = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='suite'";
+         this.conn.Consult(sui);
+         
+
+            
+         int numsen = Integer.parseInt(senci);
+         int numdel = Integer.parseInt(del);
+         int numsui = Integer.parseInt(sui);
+         int sen=(numsen*100)/14;
+         int deluxe=(numdel*100)/11;
+         int suite=(numsui*100)/5;
+         
+        
+        dataset.setValue((int) sen, "Ocupacion", "Sencilla");
+        dataset.setValue((int) deluxe, "Ocupacion", "Deluxe");
+        dataset.setValue((int) suite, "Ocupacion", "Suite");
+
+        
+        
+        
+        JFreeChart chart = ChartFactory.createBarChart(
+                " PORCENTAJE DE OCUPACION" ,
+                "Tipo de habitacion", 
+                "Porcentaje", 
+                dataset, 
+                PlotOrientation.VERTICAL,
+                true, 
+                false, 
+                false
+        );
+        
+    
+        //Mostramos la grafica en pantalla
+        ChartFrame frame = new ChartFrame("Main", chart);
+        frame.pack();
+        frame.setVisible(true);
+
+           
+            
+               }catch (Exception e) {
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        // TODO add your handling code here:
+         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        
+        dataset.setValue((int) 14, "Ocupacion", "Sencilla");
+        dataset.setValue((int) 11, "Ocupacion", "Deluxe");
+        dataset.setValue((int) 5, "Ocupacion", "Suite");
+
+        
+        
+        
+        JFreeChart chart = ChartFactory.createBarChart(
+                " Habitaciones" ,
+                "Tipo de habitacion", 
+                "Total", 
+                dataset, 
+                PlotOrientation.HORIZONTAL,
+                true, 
+                false, 
+                false
+        );
+        
+    
+        //Mostramos la grafica en pantalla
+        ChartFrame frame = new ChartFrame("Main", chart);
+        frame.pack();
+        frame.setVisible(true);
+
+    
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+        // TODO add your handling code here:
+    try {
+
+            String query= "select count(*) from habitaciones    WHERE    ocupacion=1";
+            PreparedStatement pstmt=conn.conn.prepareStatement(query);
+            ResultSet rs=pstmt.executeQuery();
+            if(rs.next()){
+                int ocu = Integer.parseInt(query);
+                int ocupacion = 30-ocu;
+                 DefaultPieDataset dataset = new DefaultPieDataset();
+                dataset.setValue("Habitaciones Ocupadas",(ocu*100)/30);
+                dataset.setValue("Disponible",(ocupacion*100)/30);
+        
+        JFreeChart chart = ChartFactory.createPieChart("Porcentaje de disponbilidad actual"
+                ,dataset,true,true,false);
+        //Mostramos la grafica en pantalla
+        ChartFrame frame = new ChartFrame("disponibilidad", chart);
+        frame.pack();
+        frame.setVisible(true);
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"error");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }    
+        
+    }//GEN-LAST:event_jPanel5MouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -588,6 +760,9 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
