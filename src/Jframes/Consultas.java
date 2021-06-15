@@ -39,6 +39,7 @@ public class Consultas extends javax.swing.JFrame {
     }
     
     
+    
     public Consultas() {
         initComponents();
         jTextFieldHabit.setEditable(false);
