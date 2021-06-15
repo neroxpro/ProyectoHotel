@@ -5,6 +5,8 @@
  */
 package Jframes;
 
+import java.applet.AudioClip;
+
 /**
  *
  * @author Fer
@@ -34,6 +36,7 @@ public class Menu extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButtonmusica = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,6 +103,15 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton6);
         jButton6.setBounds(290, 380, 180, 37);
 
+        jButtonmusica.setText("MUSICA");
+        jButtonmusica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonmusicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonmusica);
+        jButtonmusica.setBounds(640, 130, 79, 25);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco5.png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(1, -4, 750, 500);
@@ -153,6 +165,13 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4MouseClicked
 
+    private void jButtonmusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonmusicaActionPerformed
+        // TODO add your handling code here:
+        AudioClip piano2;
+        piano2=java.applet.Applet.newAudioClip(getClass().getResource("/Jframes/piano2.wav"));
+        piano2.play();
+    }//GEN-LAST:event_jButtonmusicaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -195,6 +214,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonmusica;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
