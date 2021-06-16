@@ -7,10 +7,12 @@ package Jframes;
 
 import clasesChekin.Altas;
 import clasesChekin.Mapa;
+import clasesChekin.Mapa2;
 import controlMySql.MySqlConn;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -112,7 +114,7 @@ public class Checkin extends javax.swing.JFrame {
         jPanel1.add(jLabel10);
         jLabel10.setBounds(348, 329, 111, 19);
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(185, 66, 394, 22);
+        jTextFieldNombre.setBounds(185, 66, 394, 20);
 
         jComboBoxCiudad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jComboBoxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Ensenada", "Mexicali", "Tijuana", "La Paz", "Los Cabos", "Campeche", "Ciudad del Carmen", "Tapachula", "Tuxtla Gutiérrez", "Chihuahua", "Juárez", "La Laguna", "Monclova-Frontera", "Piedras Negras", "Saltillo", "Colima-Villa de Álvarez", "Manzanillo", "Tecomán", "Valle de México", "Durango", "Celaya", "Guanajuato", "Irapuato", "La Piedad-Pénjamo", "León", "Salamanca", "San Francisco del Rincón", "Acapulco", "Chilpancingo", "Pachuca", "Tula", "Tulancingo", "Guadalajara", "Ocotlán", "Puerto Vallarta", "Morelia", "Uruapan", "Zamora-Jacona", "Cuautla", "Cuernavaca", "Toluca", "Tepic", "Monterrey", "Oaxaca", "Tehuantepec-Salina Cruz", "Puebla-Tlaxcala", "Tehuacán", "Querétaro", "San Juan del Río", "Cancún", "Chetumal", "Rioverde-Ciudad Fernández", "San Luis Potosí-Soledad", "Culiacán", "Los Mochis", "Mazatlán", "Ciudad Obregón", "Guaymas", "Hermosillo", "Cárdenas", "Villahermosa", "Ciudad Victoria", "Matamoros", "Nuevo Laredo", "Reynosa-Río Bravo", "Tampico-Pánuco", "Tlaxcala-Apizaco", "Coatzacoalcos", "Córdoba", "Minatitlán", "Orizaba", "Poza Rica", "Veracruz", "Xalapa", "Mérida", "Zacatecas-Guadalupe", "Otra" }));
@@ -123,19 +125,19 @@ public class Checkin extends javax.swing.JFrame {
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSencilla.setText("Sencilla");
         jPanel1.add(jRadioButtonHabSencilla);
-        jRadioButtonHabSencilla.setBounds(250, 220, 75, 25);
+        jRadioButtonHabSencilla.setBounds(250, 220, 71, 23);
 
         buttonGroup2.add(jRadioButtonHabDeluxe);
         jRadioButtonHabDeluxe.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabDeluxe.setText("Deluxe");
         jPanel1.add(jRadioButtonHabDeluxe);
-        jRadioButtonHabDeluxe.setBounds(370, 220, 69, 25);
+        jRadioButtonHabDeluxe.setBounds(370, 220, 65, 23);
 
         buttonGroup2.add(jRadioButtonHabSuits);
         jRadioButtonHabSuits.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSuits.setText("Suit");
         jPanel1.add(jRadioButtonHabSuits);
-        jRadioButtonHabSuits.setBounds(480, 220, 51, 25);
+        jRadioButtonHabSuits.setBounds(480, 220, 49, 23);
 
         jComboBoxTotOcupantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", " " }));
         jPanel1.add(jComboBoxTotOcupantes);
@@ -147,7 +149,7 @@ public class Checkin extends javax.swing.JFrame {
 
         jButtonRecibo.setText("RECIBO");
         jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 430, 75, 25);
+        jButtonRecibo.setBounds(130, 430, 71, 23);
 
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,7 +166,7 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(330, 430, 99, 25);
+        jButtonRegistrar.setBounds(330, 430, 89, 23);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -173,20 +175,21 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(540, 430, 67, 25);
+        jButtonSalir.setBounds(540, 430, 61, 23);
         jPanel1.add(jDateChooserIngreso);
         jDateChooserIngreso.setBounds(350, 180, 120, 30);
 
         jLabel11.setText("Días que se va a quedar: ");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(158, 379, 140, 16);
+        jLabel11.setBounds(158, 379, 140, 14);
         jPanel1.add(jTextFielDias);
-        jTextFielDias.setBounds(317, 376, 76, 22);
+        jTextFielDias.setBounds(317, 376, 76, 20);
 
         jComboBoxPiso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
         jPanel1.add(jComboBoxPiso);
         jComboBoxPiso.setBounds(650, 220, 40, 30);
 
+        jTextField1.setEditable(false);
         jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTextField1MouseClicked(evt);
@@ -271,10 +274,10 @@ public class Checkin extends javax.swing.JFrame {
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         // TODO add your handling code here:
-                        String tipo="";
-        int p;
+                        String tipo="sencilla";
+        
         Mapa ma ;
-        p = (int)this.jComboBoxPiso.getItemCount();
+        int p = Integer.parseInt(this.jComboBoxPiso.getItemAt(jComboBoxPiso.getSelectedIndex()));
 
         if(this.jRadioButtonHabSencilla.isSelected()){
             tipo = "sencilla";
@@ -283,9 +286,17 @@ public class Checkin extends javax.swing.JFrame {
         }else if (this.jRadioButtonHabSuits.isSelected()){
             tipo = "suit";
         }
-
-        ma = new Mapa(p,tipo);
-        ma.setVisible(true);
+        Mapa2 mapa = new Mapa2();
+        int result = JOptionPane.showConfirmDialog(null, mapa,
+                  "Edit Player", JOptionPane.OK_CANCEL_OPTION,
+                  JOptionPane.PLAIN_MESSAGE);
+        if (result == JOptionPane.OK_OPTION) {
+        
+            System.out.println("seleccionado: " + mapa.selecc);
+            }
+        
+ //       ma = new Mapa(p,tipo);
+ //       ma.setVisible(true);
     }//GEN-LAST:event_jTextField1MouseClicked
 
     /**

@@ -7,7 +7,9 @@ package clasesChekin;
 
 import controlMySql.MySqlConn;
 import java.awt.Color;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -16,7 +18,8 @@ import java.util.ArrayList;
 public final class Mapa extends javax.swing.JFrame {
     int piso;
     String tipo;
-    ArrayList <Integer> desocupados = new ArrayList();
+    List <Integer> desocupados = new ArrayList();
+    List<Habitacion> habitaciones;
     MySqlConn objConn=new  MySqlConn();
     /**
      * Creates new form Mapa
@@ -26,6 +29,7 @@ public final class Mapa extends javax.swing.JFrame {
         this.piso = piso;
         this.tipo = tipo;
         desocupados = checa();
+        habitaciones = checav2();
         if(piso == 1){
             piso1(tipo);
         }else{
@@ -69,6 +73,11 @@ public final class Mapa extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("jLabel1");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -155,9 +164,7 @@ public final class Mapa extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addGap(97, 97, 97))
+                    .addComponent(jLabel13)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(jLabel15)))
@@ -217,6 +224,32 @@ public final class Mapa extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
+    
+    
+    public List<Habitacion> checav2(){
+        List <Habitacion> lista = new ArrayList<>();
+        String query="Select * from habitaciones";
+        objConn.execQuery(query);
+        try{
+            while (objConn.rs.next()){
+                int numero = objConn.rs.getInt(1);
+                System.out.println("numero : " + numero);
+                int piso =  objConn.rs.getInt(2);
+                int ocupacion =  objConn.rs.getInt(3);
+                String tipo = objConn.rs.getString(4);
+                lista.add(new Habitacion(numero, piso, ocupacion, tipo));
+            }
+        }
+        catch (SQLException e) {
+        }
+        objConn.closeRsStmt();
+        objConn.closeConnection();
+        return lista; 
+    }
     
     public ArrayList checa(){
        ArrayList <Integer> lista = null;
@@ -248,16 +281,19 @@ public final class Mapa extends javax.swing.JFrame {
                 }catch(Exception e){}
             }
            
-        objConn.closeRsStmt();
-        objConn.closeConnection();
+       // objConn.closeRsStmt();
+        //objConn.closeConnection();
 
         }
        return lista; 
     }
     
     public void piso1(String tipo){
-        this.jLabel1.setText("1");
-        this.jLabel2.setText("2");
+        jLabel2.setOpaque(true);
+        this.jLabel2.setBackground(Color.LIGHT_GRAY);
+        this.jLabel2.setForeground(Color.WHITE);
+        this.jLabel1.setText(String.valueOf(habitaciones.get(0).getNumero()));
+        this.jLabel2.setText(String.valueOf(habitaciones.get(1).getNumero()));
         this.jLabel3.setText("3");
         this.jLabel4.setText("4");
         this.jLabel5.setText("5");
@@ -271,11 +307,13 @@ public final class Mapa extends javax.swing.JFrame {
         this.jLabel13.setText("13");
         this.jLabel14.setText("14");
         this.jLabel15.setText("15");
-        if(tipo == "sencilla"){
-            if(!des(1)){
+        if(tipo.equalsIgnoreCase("sencilla")){
+            if(habitaciones.get(0).ocupacion!=1){
+                jLabel1.setOpaque(true);
                 this.jLabel1.setBackground(Color.ORANGE);
             }
             if(!des(2)){
+                
                 this.jLabel2.setBackground(Color.ORANGE);
             }
             if(!des(3)){
