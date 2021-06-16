@@ -297,7 +297,7 @@ public class Checkin extends javax.swing.JFrame {
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         // TODO add your handling code here:
-                        String tipo="sencilla";
+                        String tipo;//="sencilla";
         
         
         Mapa ma ;
