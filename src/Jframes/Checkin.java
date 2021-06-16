@@ -71,7 +71,7 @@ public class Checkin extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Nombre:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(91, 67, 60, 19);
+        jLabel2.setBounds(100, 70, 60, 19);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("CHECK-IN ");
@@ -81,12 +81,12 @@ public class Checkin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel3.setText("Ciudad:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(96, 118, 55, 19);
+        jLabel3.setBounds(100, 130, 55, 19);
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel4.setText("Fecha de Ingreso:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(210, 180, 125, 19);
+        jLabel4.setBounds(440, 130, 125, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,12 +114,12 @@ public class Checkin extends javax.swing.JFrame {
         jPanel1.add(jLabel10);
         jLabel10.setBounds(348, 329, 111, 19);
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(185, 66, 394, 20);
+        jTextFieldNombre.setBounds(185, 56, 394, 40);
 
         jComboBoxCiudad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jComboBoxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Ensenada", "Mexicali", "Tijuana", "La Paz", "Los Cabos", "Campeche", "Ciudad del Carmen", "Tapachula", "Tuxtla Gutiérrez", "Chihuahua", "Juárez", "La Laguna", "Monclova-Frontera", "Piedras Negras", "Saltillo", "Colima-Villa de Álvarez", "Manzanillo", "Tecomán", "Valle de México", "Durango", "Celaya", "Guanajuato", "Irapuato", "La Piedad-Pénjamo", "León", "Salamanca", "San Francisco del Rincón", "Acapulco", "Chilpancingo", "Pachuca", "Tula", "Tulancingo", "Guadalajara", "Ocotlán", "Puerto Vallarta", "Morelia", "Uruapan", "Zamora-Jacona", "Cuautla", "Cuernavaca", "Toluca", "Tepic", "Monterrey", "Oaxaca", "Tehuantepec-Salina Cruz", "Puebla-Tlaxcala", "Tehuacán", "Querétaro", "San Juan del Río", "Cancún", "Chetumal", "Rioverde-Ciudad Fernández", "San Luis Potosí-Soledad", "Culiacán", "Los Mochis", "Mazatlán", "Ciudad Obregón", "Guaymas", "Hermosillo", "Cárdenas", "Villahermosa", "Ciudad Victoria", "Matamoros", "Nuevo Laredo", "Reynosa-Río Bravo", "Tampico-Pánuco", "Tlaxcala-Apizaco", "Coatzacoalcos", "Córdoba", "Minatitlán", "Orizaba", "Poza Rica", "Veracruz", "Xalapa", "Mérida", "Zacatecas-Guadalupe", "Otra" }));
         jPanel1.add(jComboBoxCiudad);
-        jComboBoxCiudad.setBounds(169, 118, 197, 21);
+        jComboBoxCiudad.setBounds(190, 120, 240, 30);
 
         buttonGroup2.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
@@ -149,7 +149,7 @@ public class Checkin extends javax.swing.JFrame {
 
         jButtonRecibo.setText("RECIBO");
         jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 430, 71, 23);
+        jButtonRecibo.setBounds(130, 430, 120, 23);
 
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -166,7 +166,7 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(330, 430, 89, 23);
+        jButtonRegistrar.setBounds(330, 430, 130, 23);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -175,9 +175,9 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(540, 430, 61, 23);
+        jButtonSalir.setBounds(540, 430, 100, 23);
         jPanel1.add(jDateChooserIngreso);
-        jDateChooserIngreso.setBounds(350, 180, 120, 30);
+        jDateChooserIngreso.setBounds(570, 120, 120, 30);
 
         jLabel11.setText("Días que se va a quedar: ");
         jPanel1.add(jLabel11);
