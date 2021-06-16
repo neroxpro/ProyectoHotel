@@ -152,9 +152,9 @@ public class Servicios extends javax.swing.JFrame {
             } if(this.jCheckBoxNiñera.isSelected()){
                 sum+=600;
             }
-        JOptionPane.showMessageDialog(this,"Total: "+sum);
+        JOptionPane.showMessageDialog(this,"Cargo Extra Total: "+sum);
         
-        String query="update ventas, ocupaciones, habitaciones set ventas.gastosExtras=ventas.gastosExtras+"+sum+" WHERE ventas.id=ocupaciones.Ventas_id	and habitaciones.numero=ocupaciones.habitaciones_numero and habitaciones.numero="+"'"+this.jTextFieldHabServicios.getText().trim()+"'";
+        String query="update ventas, ocupaciones, habitaciones set ventas.gastosExtras=ventas.gastosExtras+"+sum+" WHERE ventas.id=ocupaciones.Ventas_id and habitaciones.numero=ocupaciones.habitaciones_numero and habitaciones.numero="+"'"+this.jTextFieldHabServicios.getText().trim()+"'";
         
 
         

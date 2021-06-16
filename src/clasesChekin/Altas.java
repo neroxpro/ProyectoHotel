@@ -1,5 +1,6 @@
 package clasesChekin;
 
+import Jframes.ReciboRegistro;
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -7,10 +8,10 @@ import java.time.LocalDate;
 public class Altas {
     String nom,thab,origen;
     LocalDate ingreso,salida;
-    int piso,lp,total,pextras,nhab,dias,cu;
+    int piso,lp,total,pextras,nhab,dias,cu,costo,gastoEx;
     MySqlConn conn;
 
-    public Altas(String nom, String thab, String origen, LocalDate ingreso, int piso, int lp, int total, int pextras, int nhab, int dias,int cu) {
+    public Altas(String nom, String thab, String origen, LocalDate ingreso, int piso, int lp, int total, int pextras, int nhab, int dias,int cu,int costo) {
         this.nom = nom;
         this.thab = thab;
         this.origen = origen;
@@ -22,6 +23,8 @@ public class Altas {
         this.nhab = nhab;
         this.dias = dias;
         this.cu = cu;
+        this.costo=costo;
+        this.gastoEx=500*pextras;
         //calculando la salida
         salida = this.ingreso.plusDays(dias);
     }
@@ -64,14 +67,19 @@ public class Altas {
         String usuarios2="'"+nom+"','"+origen+"')";
         String query1=usuarios1+usuarios2;
         
-        String ocup1="insert into ocupaciones(noPersonas,persExtra,ingreso,salida,Ventas_id,usuarios_id,habitaciones_numero,empleados_id) values (";
-        String ocup2=""+total+","+pextras+",'"+ingreso+"','"+salida+"',last_insert_id(),last_insert_id()"+","+nhab+",1)";
+//        String ocup1="insert into ocupaciones(noPersonas,persExtra,ingreso,salida,Ventas_id,usuarios_id,habitaciones_numero,empleados_id) values (";
+//        String ocup2="idOcupaciones,"+total+","+pextras+",'"+ingreso+"','"+salida+"',last_insert_id(),last_insert_id(),"+nhab+"1)";
+//        String query2=ocup1+ocup2;
+        String ocup1="insert into ocupaciones(idOcupaciones, noPersonas,persExtra,ingreso,salida,Ventas_id,usuarios_id,habitaciones_numero,empleados_id) values (";
+        String ocup2="idOcupaciones, "+total+","+pextras+",'"+ingreso+"','"+salida+"',last_insert_id(),last_insert_id()"+","+nhab+",1)";
         String query2=ocup1+ocup2;
+        
+        
         
         String hab="update habitaciones set ocupacion=1 where numero=" + nhab;
         String query3=hab;
         
-        String vents="insert into ventas(cuenta,gastosExtras) values(2000,500)";
+        String vents="insert into ventas(cuenta,gastosExtras) values("+costo+","+gastoEx+")";
         String query4=vents;
         
         
@@ -83,5 +91,26 @@ public class Altas {
         int j3 = this.conn.Update(query4);
         
         int j1 = this.conn.Update(query2);
+        
+        ReciboRegistro r = new ReciboRegistro();
+        String ing,p,sali,t,pe,li,nuh;
+        ing = ""+ingreso.getDayOfMonth()+"-"+ingreso.getMonth()+"-"+ingreso.getYear();
+        sali = ""+salida.getDayOfMonth()+"-"+salida.getMonth()+"-"+salida.getYear();
+        nuh = String.valueOf(nhab);
+        t = String.valueOf(total);
+        pe = String.valueOf(pextras);
+        p = String.valueOf(piso);
+        
+        if (thab == "sencilla"){
+            li = String.valueOf(1);
+        }else if (thab == "deluxe"){
+            li = String.valueOf(2);
+        }else{
+            li = String.valueOf(3);
+        }
+    
+        
+        r.agrega(nom, origen,ing ,sali,nuh , thab,t , pe, li, p);
+        r.setVisible(true);
     }
 }

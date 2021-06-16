@@ -12,6 +12,8 @@ import controlMySql.MySqlConn;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -54,7 +56,6 @@ public class Checkin extends javax.swing.JFrame {
         jRadioButtonHabSuits = new javax.swing.JRadioButton();
         jComboBoxTotOcupantes = new javax.swing.JComboBox<>();
         jComboBoxPerExtra = new javax.swing.JComboBox<>();
-        jButtonRecibo = new javax.swing.JButton();
         jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jDateChooserIngreso = new com.toedter.calendar.JDateChooser();
@@ -124,18 +125,33 @@ public class Checkin extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSencilla.setText("Sencilla");
+        jRadioButtonHabSencilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonHabSencillaActionPerformed(evt);
+            }
+        });
         jPanel1.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setBounds(250, 220, 71, 23);
 
         buttonGroup2.add(jRadioButtonHabDeluxe);
         jRadioButtonHabDeluxe.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabDeluxe.setText("Deluxe");
+        jRadioButtonHabDeluxe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonHabDeluxeActionPerformed(evt);
+            }
+        });
         jPanel1.add(jRadioButtonHabDeluxe);
         jRadioButtonHabDeluxe.setBounds(370, 220, 65, 23);
 
         buttonGroup2.add(jRadioButtonHabSuits);
         jRadioButtonHabSuits.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSuits.setText("Suit");
+        jRadioButtonHabSuits.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonHabSuitsActionPerformed(evt);
+            }
+        });
         jPanel1.add(jRadioButtonHabSuits);
         jRadioButtonHabSuits.setBounds(480, 220, 49, 23);
 
@@ -144,12 +160,13 @@ public class Checkin extends javax.swing.JFrame {
         jComboBoxTotOcupantes.setBounds(257, 328, 40, 30);
 
         jComboBoxPerExtra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", " " }));
+        jComboBoxPerExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPerExtraActionPerformed(evt);
+            }
+        });
         jPanel1.add(jComboBoxPerExtra);
         jComboBoxPerExtra.setBounds(490, 330, 40, 30);
-
-        jButtonRecibo.setText("RECIBO");
-        jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 430, 120, 23);
 
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -166,9 +183,9 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(330, 430, 130, 23);
+        jButtonRegistrar.setBounds(290, 430, 130, 23);
 
-        jButtonSalir.setText("SALIR");
+        jButtonSalir.setText("MENU");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonSalirMouseClicked(evt);
@@ -230,18 +247,23 @@ public class Checkin extends javax.swing.JFrame {
         Altas a;
         String nom,tham="",origen;
         LocalDate ingreso;
-        int piso,lp=0,total,pextras,nhab,dias,cu=0;
+        int piso,lp=0,total,pextras,nhab,dias,cu=0,costo=0,suma=0;
         nom = this.jTextFieldNombre.getText();
+        dias = Integer.parseInt(this.jTextFielDias.getText());
         
         if(this.jRadioButtonHabSencilla.isSelected()){
             tham = "sencilla";
             lp = 1;
+            costo=2000*dias;
+            
         }else if(this.jRadioButtonHabDeluxe.isSelected()){
             tham = "deluxe";
             lp = 2;
+            costo=3200*dias;
         }else if (this.jRadioButtonHabSuits.isSelected()){
             tham = "suit";
             lp = 3;
+            costo=4500*dias;
         }
         origen = (String)this.jComboBoxCiudad.getSelectedItem();
         Date temp = this.jDateChooserIngreso.getDate();
@@ -250,11 +272,12 @@ public class Checkin extends javax.swing.JFrame {
         pextras = Integer.parseInt(this.jComboBoxPerExtra.getSelectedItem().toString());
         //pextras = (int)this.jComboBoxPerExtra.getSelectedItem();
         total = lp+pextras;
-        nhab = (int)this.jComboBoxPiso.getItemCount();
-        dias = Integer.parseInt(this.jTextFielDias.getText());
+        //nhab = (int)this.jComboBoxPiso.getItemCount();
+        nhab= Integer.parseInt(this.jTextField1.getText());
         
+        JOptionPane.showMessageDialog(this,"Registro Exitoso! ");
         
-        a = new Altas(nom,tham,origen,ingreso,piso,lp,total,pextras,nhab,dias,cu);
+        a = new Altas(nom,tham,origen,ingreso,piso,lp,total,pextras,nhab,dias,cu,costo);
         a.darAlta(new  MySqlConn());
     }//GEN-LAST:event_jButtonRegistrarMousePressed
 
@@ -274,7 +297,8 @@ public class Checkin extends javax.swing.JFrame {
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
         // TODO add your handling code here:
-                        String tipo="sencilla";
+                        String tipo;//="sencilla";
+        
         
         Mapa ma ;
         int p = Integer.parseInt(this.jComboBoxPiso.getItemAt(jComboBoxPiso.getSelectedIndex()));
@@ -286,18 +310,44 @@ public class Checkin extends javax.swing.JFrame {
         }else if (this.jRadioButtonHabSuits.isSelected()){
             tipo = "suit";
         }
-        Mapa2 mapa = new Mapa2();
+        Mapa2 mapa = new Mapa2(p);
         int result = JOptionPane.showConfirmDialog(null, mapa,
                   "Edit Player", JOptionPane.OK_CANCEL_OPTION,
                   JOptionPane.PLAIN_MESSAGE);
         if (result == JOptionPane.OK_OPTION) {
         
             System.out.println("seleccionado: " + mapa.selecc);
+            this.jTextField1.setText(String.valueOf(mapa.selecc));
             }
         
  //       ma = new Mapa(p,tipo);
  //       ma.setVisible(true);
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void jRadioButtonHabSencillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonHabSencillaActionPerformed
+        String valores[] = {"1"};
+        ComboBoxModel<String> model = new DefaultComboBoxModel(valores);
+        
+        this.jComboBoxTotOcupantes.setModel(model);
+    }//GEN-LAST:event_jRadioButtonHabSencillaActionPerformed
+
+    private void jRadioButtonHabDeluxeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonHabDeluxeActionPerformed
+        String valores[] = {"1","2"};
+        ComboBoxModel<String> model = new DefaultComboBoxModel(valores);
+        
+        this.jComboBoxTotOcupantes.setModel(model);
+    }//GEN-LAST:event_jRadioButtonHabDeluxeActionPerformed
+
+    private void jRadioButtonHabSuitsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonHabSuitsActionPerformed
+        String valores[] = {"1","2","3"};
+        ComboBoxModel<String> model = new DefaultComboBoxModel(valores);
+        
+        this.jComboBoxTotOcupantes.setModel(model);
+    }//GEN-LAST:event_jRadioButtonHabSuitsActionPerformed
+
+    private void jComboBoxPerExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPerExtraActionPerformed
+        JOptionPane.showMessageDialog(this,"Son 500$ mas por persona ");
+    }//GEN-LAST:event_jComboBoxPerExtraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -336,7 +386,6 @@ public class Checkin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButtonRecibo;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JComboBox<String> jComboBoxCiudad;

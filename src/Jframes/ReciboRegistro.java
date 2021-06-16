@@ -66,88 +66,107 @@ public class ReciboRegistro extends javax.swing.JFrame {
 
         jLabel2.setText("Ubicacion:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(149, 128, 59, 16);
+        jLabel2.setBounds(149, 128, 49, 14);
 
         jLabel3.setText("Hombre del Huesped:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(84, 162, 124, 16);
+        jLabel3.setBounds(84, 162, 103, 14);
 
         jLabel4.setText("Ciudad de origen:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(106, 202, 102, 16);
+        jLabel4.setBounds(106, 202, 85, 14);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha de ingreso:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(105, 237, 103, 16);
+        jLabel5.setBounds(105, 237, 86, 14);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Fecha de salida:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(114, 271, 94, 16);
+        jLabel6.setBounds(114, 271, 78, 14);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Numero de habitacion:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(78, 314, 130, 16);
+        jLabel7.setBounds(78, 314, 108, 14);
 
         jLabel8.setText("piso:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(590, 360, 28, 16);
+        jLabel8.setBounds(590, 360, 23, 14);
 
         jLabel9.setText("Tipo de habitacion:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(98, 354, 110, 16);
+        jLabel9.setBounds(98, 354, 91, 14);
 
         jLabel10.setText("Total de ocupantes de la habitacion:");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(0, 389, 208, 16);
+        jLabel10.setBounds(0, 389, 174, 14);
 
         jLabel11.setText("personas extra:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(118, 424, 90, 16);
+        jLabel11.setBounds(118, 424, 77, 14);
 
         jLabel12.setText("Registro completado");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(320, 461, 117, 16);
+        jLabel12.setBounds(320, 461, 98, 14);
 
         jLabel13.setText("Limite:");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(289, 424, 39, 16);
+        jLabel13.setBounds(289, 424, 31, 14);
 
         jLabel14.setText("Huesped");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(388, 424, 49, 16);
+        jLabel14.setBounds(388, 424, 42, 14);
 
         jLabel15.setText("Calle Caguama 6, 77310, Isla de Holbox, Cancún-Riviera Maya, Quintana Roo, MÉXICO.");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(226, 128, 499, 16);
+        jLabel15.setBounds(226, 128, 424, 14);
 
+        jTextFieldNombre.setEditable(false);
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNombreActionPerformed(evt);
             }
         });
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(226, 159, 317, 22);
+        jTextFieldNombre.setBounds(226, 159, 317, 20);
+
+        jTextFieldCiudad.setEditable(false);
         jPanel1.add(jTextFieldCiudad);
-        jTextFieldCiudad.setBounds(226, 199, 317, 22);
+        jTextFieldCiudad.setBounds(226, 199, 317, 20);
+
+        jTextFieldfechaing.setEditable(false);
         jPanel1.add(jTextFieldfechaing);
-        jTextFieldfechaing.setBounds(213, 234, 182, 22);
+        jTextFieldfechaing.setBounds(213, 234, 182, 20);
+
+        jTextFieldfechasal.setEditable(false);
         jPanel1.add(jTextFieldfechasal);
-        jTextFieldfechasal.setBounds(213, 268, 182, 22);
+        jTextFieldfechasal.setBounds(213, 268, 182, 20);
+
+        jTextFieldnumhab.setEditable(false);
         jPanel1.add(jTextFieldnumhab);
-        jTextFieldnumhab.setBounds(213, 311, 58, 22);
+        jTextFieldnumhab.setBounds(213, 311, 58, 20);
+
+        jTextFieldtipohab.setEditable(false);
         jPanel1.add(jTextFieldtipohab);
-        jTextFieldtipohab.setBounds(213, 351, 58, 22);
+        jTextFieldtipohab.setBounds(213, 351, 58, 20);
+
+        jTextFieldpiso.setEditable(false);
         jPanel1.add(jTextFieldpiso);
-        jTextFieldpiso.setBounds(630, 360, 45, 22);
+        jTextFieldpiso.setBounds(630, 360, 45, 20);
+
+        jTextFieldtotocu.setEditable(false);
         jPanel1.add(jTextFieldtotocu);
-        jTextFieldtotocu.setBounds(213, 386, 58, 22);
+        jTextFieldtotocu.setBounds(213, 386, 58, 20);
+
+        jTextFieldperextra.setEditable(false);
         jPanel1.add(jTextFieldperextra);
-        jTextFieldperextra.setBounds(213, 421, 58, 22);
+        jTextFieldperextra.setBounds(213, 421, 58, 20);
+
+        jTextFieldlimite.setEditable(false);
         jPanel1.add(jTextFieldlimite);
-        jTextFieldlimite.setBounds(333, 421, 50, 22);
+        jTextFieldlimite.setBounds(333, 421, 50, 20);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco5.png"))); // NOI18N
         jPanel1.add(jLabel16);
@@ -177,6 +196,18 @@ public class ReciboRegistro extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    public void agrega(String nom,String ciudad,String entrada,String salida,String numH,String tipoH,String totalP,String perEx,String lim,String piso){
+        this.jTextFieldNombre.setText(nom);
+        this.jTextFieldCiudad.setText(ciudad);
+        this.jTextFieldfechaing.setText(entrada);
+        this.jTextFieldfechasal.setText(salida);
+        this.jTextFieldnumhab.setText(numH);
+        this.jTextFieldtipohab.setText(tipoH);
+        this.jTextFieldtotocu.setText(totalP);
+        this.jTextFieldperextra.setText(perEx);
+        this.jTextFieldlimite.setText(lim);
+        this.jTextFieldpiso.setText(piso);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

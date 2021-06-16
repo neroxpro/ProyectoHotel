@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Fer
  */
-public class Altas extends javax.swing.JFrame {
+public class AltasRegistro extends javax.swing.JFrame {
     MySqlConn conn=new MySqlConn();
     /**
      * Creates new form Login
      */
-    public Altas() {
+    public AltasRegistro() {
         initComponents();
     }
 
@@ -67,14 +67,14 @@ public class Altas extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(30, 320, 100, 19);
         jPanel1.add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(140, 320, 231, 22);
+        jTextFieldUsuario.setBounds(140, 320, 231, 20);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel2.setText("Contraseña:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 410, 110, 17);
         jPanel1.add(jPasswordFieldcontra);
-        jPasswordFieldcontra.setBounds(140, 410, 231, 22);
+        jPasswordFieldcontra.setBounds(140, 410, 231, 20);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(380, 220, 0, 0);
 

@@ -27,7 +27,7 @@ public class Mapa2 extends javax.swing.JPanel {
     /**
      * Creates new form Mapa2
      */
-    public Mapa2() {
+    public Mapa2(int p) {
         initComponents();
         this.jRadioButton1.setOpaque(true);
         this.jRadioButton2.setOpaque(true);

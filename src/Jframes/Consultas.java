@@ -126,6 +126,8 @@ public class Consultas extends javax.swing.JFrame {
         jPanel4.add(CP);
         jPanel4.validate();
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -744,7 +746,8 @@ public class Consultas extends javax.swing.JFrame {
             PreparedStatement pstmt=conn.conn.prepareStatement(query);
             ResultSet rs=pstmt.executeQuery();
             if(rs.next()){
-                int ocu = Integer.parseInt(query);
+                
+                int ocu = rs.getInt(1);
                 int ocupacion = 30-ocu;
                  DefaultPieDataset dataset = new DefaultPieDataset();
                 dataset.setValue("Habitaciones Ocupadas",(ocu*100)/30);
