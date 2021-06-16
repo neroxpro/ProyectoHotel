@@ -39,6 +39,7 @@ public class Portada extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jButtonlogin = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +100,15 @@ public class Portada extends javax.swing.JFrame {
         jPanel1.add(jLabel11);
         jLabel11.setBounds(170, 340, 260, 17);
 
+        jButtonlogin.setText("LOG IN");
+        jButtonlogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonloginMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jButtonlogin);
+        jButtonlogin.setBounds(490, 370, 71, 25);
+
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo portada.jpg"))); // NOI18N
         jPanel1.add(jLabel13);
         jLabel13.setBounds(0, -40, 750, 500);
@@ -116,6 +126,11 @@ public class Portada extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonloginMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonloginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -153,6 +168,7 @@ public class Portada extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonlogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
