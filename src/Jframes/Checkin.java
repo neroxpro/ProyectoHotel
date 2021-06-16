@@ -174,7 +174,7 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(315, 427, 89, 23);
+        jButtonRegistrar.setBounds(330, 430, 89, 23);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -183,13 +183,13 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(550, 420, 61, 23);
+        jButtonSalir.setBounds(540, 430, 61, 23);
         jPanel1.add(jDateChooserIngreso);
         jDateChooserIngreso.setBounds(350, 180, 108, 20);
 
         jLabel11.setText("Días que se va a quedar: ");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(158, 379, 123, 14);
+        jLabel11.setBounds(158, 379, 140, 14);
         jPanel1.add(jTextFielDias);
         jTextFielDias.setBounds(317, 376, 76, 20);
 
