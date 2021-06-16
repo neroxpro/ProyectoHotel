@@ -56,7 +56,6 @@ public class Checkin extends javax.swing.JFrame {
         jRadioButtonHabSuits = new javax.swing.JRadioButton();
         jComboBoxTotOcupantes = new javax.swing.JComboBox<>();
         jComboBoxPerExtra = new javax.swing.JComboBox<>();
-        jButtonRecibo = new javax.swing.JButton();
         jButtonRegistrar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jDateChooserIngreso = new com.toedter.calendar.JDateChooser();
@@ -154,10 +153,6 @@ public class Checkin extends javax.swing.JFrame {
         jPanel1.add(jComboBoxPerExtra);
         jComboBoxPerExtra.setBounds(490, 330, 40, 30);
 
-        jButtonRecibo.setText("RECIBO");
-        jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 430, 120, 23);
-
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -173,9 +168,9 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(330, 430, 130, 23);
+        jButtonRegistrar.setBounds(290, 430, 130, 23);
 
-        jButtonSalir.setText("SALIR");
+        jButtonSalir.setText("MENU");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonSalirMouseClicked(evt);
@@ -350,7 +345,6 @@ public class Checkin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JButton jButtonRecibo;
     private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JComboBox<String> jComboBoxCiudad;
