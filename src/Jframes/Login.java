@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegistrarMouseClicked
         // TODO add your handling code here:
-        Altas al = new Altas();
+        AltasRegistro al = new AltasRegistro();
         al.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonRegistrarMouseClicked
