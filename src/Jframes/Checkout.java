@@ -57,17 +57,17 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 450, 75, 25);
+        jButtonRecibo.setBounds(130, 450, 71, 23);
 
         jButtonSalida.setText("SALIDA");
         jPanel1.add(jButtonSalida);
-        jButtonSalida.setBounds(320, 450, 75, 25);
+        jButtonSalida.setBounds(320, 450, 69, 23);
 
         jButtonSalir.setText("SALIR");
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(530, 450, 67, 25);
+        jButtonSalir.setBounds(530, 450, 61, 23);
         jPanel1.add(jTextFieldNumHab);
-        jTextFieldNumHab.setBounds(412, 208, 64, 22);
+        jTextFieldNumHab.setBounds(412, 208, 64, 20);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -77,11 +77,11 @@ public class Checkout extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         pack();

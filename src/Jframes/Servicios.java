@@ -48,7 +48,7 @@ public class Servicios extends javax.swing.JFrame {
         jButtonConfirmar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jButtonLimpiar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldHabServicios = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,27 +68,27 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckBoxCuart);
-        jCheckBoxCuart.setBounds(287, 128, 149, 27);
+        jCheckBoxCuart.setBounds(287, 128, 147, 27);
 
         jCheckBoxBar.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxBar.setText("Servicio al Bar");
         jPanel1.add(jCheckBoxBar);
-        jCheckBoxBar.setBounds(287, 192, 131, 27);
+        jCheckBoxBar.setBounds(287, 192, 127, 27);
 
         jCheckBoxTintoreria.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxTintoreria.setText("Servicio de Tintoreria");
         jPanel1.add(jCheckBoxTintoreria);
-        jCheckBoxTintoreria.setBounds(287, 258, 177, 27);
+        jCheckBoxTintoreria.setBounds(287, 258, 175, 27);
 
         jCheckBoxSpa.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxSpa.setText("Servicio de SPA");
         jPanel1.add(jCheckBoxSpa);
-        jCheckBoxSpa.setBounds(287, 326, 145, 27);
+        jCheckBoxSpa.setBounds(287, 326, 141, 27);
 
         jCheckBoxNiñera.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jCheckBoxNiñera.setText("Servicio de Niñera");
         jPanel1.add(jCheckBoxNiñera);
-        jCheckBoxNiñera.setBounds(287, 392, 157, 27);
+        jCheckBoxNiñera.setBounds(287, 392, 155, 27);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel2.setText("Habitacion:");
@@ -102,7 +102,7 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonConfirmar);
-        jButtonConfirmar.setBounds(132, 441, 103, 25);
+        jButtonConfirmar.setBounds(132, 441, 93, 23);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(525, 441, 93, 25);
+        jButtonSalir.setBounds(525, 441, 93, 23);
 
         jButtonLimpiar.setText("LIMPIAR");
         jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -120,9 +120,9 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonLimpiar);
-        jButtonLimpiar.setBounds(328, 441, 79, 25);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(384, 88, 66, 22);
+        jButtonLimpiar.setBounds(328, 441, 73, 23);
+        jPanel1.add(jTextFieldHabServicios);
+        jTextFieldHabServicios.setBounds(384, 88, 66, 20);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -132,11 +132,11 @@ public class Servicios extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,7 +163,7 @@ public class Servicios extends javax.swing.JFrame {
             }
         JOptionPane.showMessageDialog(this,"Total: "+sum);
         
-        String query="update ingresos set suma="+sum+"";
+        String query="UPDATE ventas SET gastosExtras="+sum+" WHERE ocupaciones.ventas_id= ocupaciones.habitaciones_numero="+"'"+this.jTextFieldHabServicios.getText().trim()+"'";
         
 
         
@@ -234,6 +234,6 @@ public class Servicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldHabServicios;
     // End of variables declaration//GEN-END:variables
 }

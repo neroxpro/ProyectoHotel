@@ -61,10 +61,30 @@ public class Altas {
         in = dFormat.format(ingreso);
         sa = dFormat.format(salida);
         
-        String parte1 = "Insert into usuarios(nombre, cdOrigen, ingreso, salida, noHab, piso, tbHab, totper, perex,cuenta) VALUES (";
-        String parte2 = "'"+nom+"','"+origen+"','"+in+"','"+sa+"','"+nhab+"','"+piso+"','"+thab+"','"+total+"','"+pextras+"','"+cu+"')";
-        String query = parte1+parte2;
+//        String parte1 = "Insert into usuarios(nombre, cdOrigen, ingreso, salida, noHab, piso, tbHab, totper, perex,cuenta) VALUES (";
+//        String parte2 = "'"+nom+"','"+origen+"','"+in+"','"+sa+"','"+nhab+"','"+piso+"','"+thab+"','"+total+"','"+pextras+"','"+cu+"')";
+//        String query = parte1+parte2;
         
-        int j = this.conn.Update(query);
+        String usuarios1="insert into usuarios(nombre,cdOrigen) values(";
+        String usuarios2="'"+nom+"','"+origen+"')";
+        String query1=usuarios1+usuarios2;
+        
+        String ocup1="insert into ocupaciones(noPersonas,persExtra,ingreso,salida,Ventas_id,usuarios_id,habitaciones_numero,empleados_id) values (";
+        String ocup2="'"+total+"'"+pextras+"'"+ingreso+"'"+salida+"'"+"last_insert_id()"+"'"+"last_insert_id()"+"'"+nhab+"'"+"last_insert_id()"+"')";
+        String query2=ocup1+ocup2;
+        
+        String hab="insert into habitaciones (ocupacion) values(1) where ocupaciones.habitaciones_numero=usuarios.id";
+        String query3=hab;
+        
+        String vents="insert into ventas(cuenta,gastosExtras) values(2000,500)";
+        String query4=vents;
+        
+        
+        //String ocupaciones1="insert into ocupaciones(noPersonas,persExtra,ingreso,salida,
+        
+        int j = this.conn.Update(query1);
+        int j1 = this.conn.Update(query2);
+        int j2 = this.conn.Update(query3);
+        int j3 = this.conn.Update(query4);
     }
 }
