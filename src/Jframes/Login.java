@@ -35,6 +35,7 @@ public class Login extends javax.swing.JFrame {
         jPasswordFieldcontra = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButtonRegistrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,27 +52,36 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonEntrar);
-        jButtonEntrar.setBounds(200, 470, 73, 23);
+        jButtonEntrar.setBounds(200, 470, 79, 25);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel1.setText("Usuario:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(30, 330, 100, 19);
         jPanel1.add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(140, 330, 231, 20);
+        jTextFieldUsuario.setBounds(140, 330, 231, 22);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel2.setText("Contraseña:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 420, 110, 17);
         jPanel1.add(jPasswordFieldcontra);
-        jPasswordFieldcontra.setBounds(130, 420, 231, 20);
+        jPasswordFieldcontra.setBounds(130, 420, 231, 22);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(380, 220, 0, 0);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/green box2.png"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(380, 0, 150, 70);
+
+        jButtonRegistrar.setText("REGISTRAR");
+        jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonRegistrarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jButtonRegistrar);
+        jButtonRegistrar.setBounds(20, 20, 120, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user-login.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -100,6 +110,11 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButtonEntrarMouseClicked
+
+    private void jButtonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegistrarMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonRegistrarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,6 +153,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEntrar;
+    private javax.swing.JButton jButtonRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
