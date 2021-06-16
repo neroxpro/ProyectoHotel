@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
@@ -45,6 +46,85 @@ public class Consultas extends javax.swing.JFrame {
         jTextFieldHabit.setEditable(false);
         jTextFieldPiso.setEditable(false);
         jTextFieldHuesped.setEditable(false);
+                       try {
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        String senci = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='sencilla'";
+         String ssencilla = this.conn.select(senci);
+        String del = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='deluxe'";
+         String sdeluxe = this.conn.select(del);
+        String sui = "select count(*) from habitaciones    WHERE    ocupacion=1 and  tipo='suite'";
+         String ssuite = this.conn.select(sui);
+         
+
+            
+         int numsen = Integer.parseInt(ssencilla);
+         int numdel = Integer.parseInt(sdeluxe);
+         int numsui = Integer.parseInt(ssuite);
+         int sen=(numsen*100)/14;
+         int deluxe=(numdel*100)/11;
+         int suite=(numsui*100)/5;
+         
+        
+        dataset.setValue((int) sen, "Ocupacion", "Sencilla");
+        dataset.setValue((int) deluxe, "Ocupacion", "Deluxe");
+        dataset.setValue((int) suite, "Ocupacion", "Suite");
+
+        
+        
+        
+        JFreeChart chart = ChartFactory.createBarChart(
+                " PORCENTAJE DE OCUPACION" ,
+                "Tipo de habitacion", 
+                "Porcentaje", 
+                dataset, 
+                PlotOrientation.VERTICAL,
+                true, 
+                false, 
+                false
+        );
+        
+
+    
+        //Mostramos la grafica en pantalla
+       // ChartFrame frame = new ChartFrame("Main", chart);
+        ChartPanel CP = new ChartPanel(chart);
+        jPanel3.setLayout(new java.awt.BorderLayout());
+         jPanel3.add(CP);
+        jPanel3.validate();
+        
+      //  frame.pack();
+     //   frame.setVisible(true);
+
+           
+            
+               }catch (Exception e) {
+            System.out.println(e);
+        }
+         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        
+        dataset.setValue((int) 14, "Ocupacion", "Sencilla");
+        dataset.setValue((int) 11, "Ocupacion", "Deluxe");
+        dataset.setValue((int) 5, "Ocupacion", "Suite");
+
+        
+        
+        
+        JFreeChart chart = ChartFactory.createBarChart(
+                " Habitaciones" ,
+                "Tipo de habitacion", 
+                "Total", 
+                dataset, 
+                PlotOrientation.HORIZONTAL,
+                true, 
+                false, 
+                false
+        );
+        
+            
+       ChartPanel CP = new ChartPanel(chart);
+       jPanel4.setLayout(new java.awt.BorderLayout());
+        jPanel4.add(CP);
+        jPanel4.validate();
     }
 
     /**
@@ -63,10 +143,8 @@ public class Consultas extends javax.swing.JFrame {
         jButtonHistoricoIngresos = new javax.swing.JButton();
         jLabel23 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
@@ -121,6 +199,8 @@ public class Consultas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(750, 570));
+
         jPanel2.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -128,11 +208,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(190, 200, 151, 19);
         jPanel2.add(jTextField1);
-        jTextField1.setBounds(360, 200, 151, 22);
+        jTextField1.setBounds(360, 200, 151, 20);
 
         jButtonHistoricoIngresos.setText("Consultar");
         jPanel2.add(jButtonHistoricoIngresos);
-        jButtonHistoricoIngresos.setBounds(340, 300, 87, 25);
+        jButtonHistoricoIngresos.setBounds(340, 300, 79, 23);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel2.add(jLabel23);
@@ -154,13 +234,6 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel3.setLayout(null);
-
-        jLabel32.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel32.setText("PRESIONA EN CUALQUIER LUGAR ");
-        jPanel3.add(jLabel32);
-        jLabel32.setBounds(140, 170, 490, 35);
-
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel3.add(jLabel24);
         jLabel24.setBounds(0, 0, 750, 510);
 
@@ -172,13 +245,6 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel4.setLayout(null);
-
-        jLabel33.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
-        jLabel33.setText("PRESIONA EN CUALQUIER LUGAR ");
-        jPanel4.add(jLabel33);
-        jLabel33.setBounds(140, 170, 520, 35);
-
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel4.add(jLabel25);
         jLabel25.setBounds(0, 0, 750, 510);
 
@@ -216,9 +282,9 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre);
-        jButtonPorNombre.setBounds(280, 190, 103, 25);
+        jButtonPorNombre.setBounds(280, 190, 93, 23);
         jPanel7.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(251, 106, 285, 22);
+        jTextFieldNombre.setBounds(251, 106, 285, 20);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Habitacion:");
@@ -230,9 +296,9 @@ public class Consultas extends javax.swing.JFrame {
         jPanel7.add(jLabel8);
         jLabel8.setBounds(340, 370, 36, 19);
         jPanel7.add(jTextFieldHabit);
-        jTextFieldHabit.setBounds(390, 340, 87, 22);
+        jTextFieldHabit.setBounds(390, 340, 87, 20);
         jPanel7.add(jTextFieldPiso);
-        jTextFieldPiso.setBounds(390, 370, 87, 22);
+        jTextFieldPiso.setBounds(390, 370, 87, 20);
 
         jButtonPorNombre1.setText("LIMPIAR");
         jButtonPorNombre1.addActionListener(new java.awt.event.ActionListener() {
@@ -241,7 +307,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre1);
-        jButtonPorNombre1.setBounds(410, 190, 79, 25);
+        jButtonPorNombre1.setBounds(410, 190, 73, 23);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel7.add(jLabel27);
@@ -263,16 +329,16 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButtonPorHabitacion);
-        jButtonPorHabitacion.setBounds(317, 207, 103, 25);
+        jButtonPorHabitacion.setBounds(317, 207, 93, 23);
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel17.setText("Huesped:");
         jPanel8.add(jLabel17);
         jLabel17.setBounds(268, 281, 67, 19);
         jPanel8.add(jTextFieldHuesped);
-        jTextFieldHuesped.setBounds(340, 280, 243, 22);
+        jTextFieldHuesped.setBounds(340, 280, 243, 20);
         jPanel8.add(jTextFieldHab);
-        jTextFieldHab.setBounds(388, 137, 46, 22);
+        jTextFieldHab.setBounds(388, 137, 46, 20);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel8.add(jLabel28);
@@ -296,7 +362,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel9.add(jButton1);
-        jButton1.setBounds(321, 176, 103, 25);
+        jButton1.setBounds(321, 176, 93, 23);
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -319,11 +385,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel9.add(jLabel22);
         jLabel22.setBounds(340, 410, 39, 19);
         jPanel9.add(jTextFieldSencilla);
-        jTextFieldSencilla.setBounds(390, 330, 39, 22);
+        jTextFieldSencilla.setBounds(390, 330, 39, 20);
         jPanel9.add(jTextFieldDeluxe);
-        jTextFieldDeluxe.setBounds(390, 370, 39, 22);
+        jTextFieldDeluxe.setBounds(390, 370, 39, 20);
         jPanel9.add(jTextFieldSuits);
-        jTextFieldSuits.setBounds(390, 410, 39, 22);
+        jTextFieldSuits.setBounds(390, 410, 39, 20);
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel9.add(jLabel29);
@@ -369,7 +435,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButtonHistoricoHuesped);
-        jButtonHistoricoHuesped.setBounds(325, 13, 103, 25);
+        jButtonHistoricoHuesped.setBounds(325, 13, 93, 23);
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel10.add(jLabel30);
@@ -448,13 +514,13 @@ public class Consultas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 750, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 542, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jTabbedPane1))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -761,8 +827,6 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

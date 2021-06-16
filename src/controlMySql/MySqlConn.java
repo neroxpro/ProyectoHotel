@@ -52,6 +52,28 @@ public class MySqlConn {
             System.out.println("Error: " + ex.getErrorCode());
         }
     }
+
+    public String select(String query){
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query); //envia una consulta devuelve un objeto ResultSet para su implementacion
+            if (rs!=null) {
+                rs = stmt.getResultSet(); //obtiene los resultados
+                //se coloca sobre el primer registro
+                rs.first();
+                return rs.getString(1);
+            }
+        }
+        catch (SQLException ex){
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("Error: " + ex.getErrorCode());
+            
+        }
+        return null;
+    }    
+
+    
     public int Update(String query){
         //information_schema
         int rModif=0;

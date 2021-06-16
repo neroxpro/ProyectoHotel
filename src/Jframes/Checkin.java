@@ -7,6 +7,9 @@ package Jframes;
 
 import clasesChekin.Altas;
 import clasesChekin.Mapa;
+import controlMySql.MySqlConn;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 /**
@@ -235,7 +238,7 @@ public class Checkin extends javax.swing.JFrame {
         // TODO add your handling code here:
         Altas a;
         String nom,tham="",origen;
-        Date ingreso;
+        LocalDate ingreso;
         int piso,lp=0,total,pextras,nhab,dias,cu=0;
         nom = this.jTextFieldNombre.getText();
         
@@ -250,15 +253,18 @@ public class Checkin extends javax.swing.JFrame {
             lp = 3;
         }
         origen = (String)this.jComboBoxCiudad.getSelectedItem();
-        ingreso = this.jDateChooserIngreso.getDate();
+        Date temp = this.jDateChooserIngreso.getDate();
+        ingreso=temp.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         piso = (int)this.jSpinnerPiso.getValue();
-        pextras = (int)this.jComboBoxPerExtra.getSelectedItem();
+        pextras = Integer.parseInt(this.jComboBoxPerExtra.getSelectedItem().toString());
+        //pextras = (int)this.jComboBoxPerExtra.getSelectedItem();
         total = lp+pextras;
         nhab = (int)this.jSpinnerHabitacion.getValue();
         dias = Integer.parseInt(this.jTextFielDias.getText());
         
         
         a = new Altas(nom,tham,origen,ingreso,piso,lp,total,pextras,nhab,dias,cu);
+        a.darAlta(new  MySqlConn());
     }//GEN-LAST:event_jButtonRegistrarMousePressed
 
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
