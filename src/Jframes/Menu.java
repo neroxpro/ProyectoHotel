@@ -37,6 +37,7 @@ public class Menu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButtonmusica = new javax.swing.JButton();
+        jButtonStop = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,6 +113,15 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButtonmusica);
         jButtonmusica.setBounds(640, 130, 79, 25);
 
+        jButtonStop.setText("STOP");
+        jButtonStop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonStopMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jButtonStop);
+        jButtonStop.setBounds(640, 180, 65, 25);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco5.png"))); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(1, -4, 750, 500);
@@ -172,6 +182,13 @@ public class Menu extends javax.swing.JFrame {
         piano2.play();
     }//GEN-LAST:event_jButtonmusicaActionPerformed
 
+    private void jButtonStopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonStopMouseClicked
+        // TODO add your handling code here:
+         AudioClip piano;
+        piano=java.applet.Applet.newAudioClip(getClass().getResource("/Jframes/piano2.wav"));
+        piano.stop(); 
+    }//GEN-LAST:event_jButtonStopMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +231,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonStop;
     private javax.swing.JButton jButtonmusica;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
