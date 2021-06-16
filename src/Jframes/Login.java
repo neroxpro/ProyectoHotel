@@ -5,6 +5,10 @@
  */
 package Jframes;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  *
  * @author Fer
@@ -108,12 +112,41 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEntrarMouseClicked
         // TODO add your handling code here:
-        
+        String cuenta, contraseña, query;
+        cuenta = this.jTextFieldUsuario.getText().trim();
+        query = "select * from cuentas where cuenta = "+"'"+cuenta+"'";
+        this.conn.Consult(query);
+        try{
+            String contraseñaMySql = this.conn.rs.getString(2);
+            char [] passw = this.jPasswordFieldcontra.getPassword();
+            contraseña = new String(passw);
+            String contraseñaencriptada = DigestUtils.md5Hex(contraseña);
+            if(contraseñaMySql.equals(contraseñaencriptada)){
+                JOptionPane.showMessageDialog(this, "Bienvenido "+this.conn.rs.getString(1)+" al sistema"); 
+                Menu m = new Menu();
+                m.setVisible(true);
+                
+        this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(this, "Error en la contraseña");
+                Login l = new Login();
+                l.setVisible(true);
+                this.dispose();
+            }
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(this, "No existe la cuenta");
+            System.out.println("No existe la cuenta");
+            Login l = new Login();
+            l.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButtonEntrarMouseClicked
 
     private void jButtonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegistrarMouseClicked
         // TODO add your handling code here:
-        
+        Altas al = new Altas();
+        al.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegistrarMouseClicked
 
     /**

@@ -48,6 +48,7 @@ public class Galeria extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -177,6 +178,11 @@ public class Galeria extends javax.swing.JFrame {
         jPanel10.add(jLabel10);
         jLabel10.setBounds(0, 0, 760, 530);
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("REGRESAR A MENU");
+        jPanel10.add(jButton1);
+        jButton1.setBounds(640, 450, 127, 23);
+
         jTabbedPane1.addTab("Mar", jPanel10);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -229,6 +235,7 @@ public class Galeria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

@@ -209,11 +209,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel2.add(jLabel1);
         jLabel1.setBounds(190, 200, 151, 19);
         jPanel2.add(jTextField1);
-        jTextField1.setBounds(360, 200, 151, 22);
+        jTextField1.setBounds(360, 200, 151, 20);
 
         jButtonHistoricoIngresos.setText("Consultar");
         jPanel2.add(jButtonHistoricoIngresos);
-        jButtonHistoricoIngresos.setBounds(340, 300, 87, 25);
+        jButtonHistoricoIngresos.setBounds(340, 300, 79, 23);
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel2.add(jLabel23);
@@ -283,9 +283,9 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre);
-        jButtonPorNombre.setBounds(280, 190, 103, 25);
+        jButtonPorNombre.setBounds(280, 190, 93, 23);
         jPanel7.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(251, 106, 285, 22);
+        jTextFieldNombre.setBounds(251, 106, 285, 20);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Habitacion:");
@@ -297,9 +297,9 @@ public class Consultas extends javax.swing.JFrame {
         jPanel7.add(jLabel8);
         jLabel8.setBounds(340, 370, 36, 19);
         jPanel7.add(jTextFieldHabit);
-        jTextFieldHabit.setBounds(390, 340, 87, 22);
+        jTextFieldHabit.setBounds(390, 340, 87, 20);
         jPanel7.add(jTextFieldPiso);
-        jTextFieldPiso.setBounds(390, 370, 87, 22);
+        jTextFieldPiso.setBounds(390, 370, 87, 20);
 
         jButtonPorNombre1.setText("LIMPIAR");
         jButtonPorNombre1.addActionListener(new java.awt.event.ActionListener() {
@@ -308,7 +308,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel7.add(jButtonPorNombre1);
-        jButtonPorNombre1.setBounds(410, 190, 79, 25);
+        jButtonPorNombre1.setBounds(410, 190, 73, 23);
 
         jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel7.add(jLabel27);
@@ -330,16 +330,16 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel8.add(jButtonPorHabitacion);
-        jButtonPorHabitacion.setBounds(317, 207, 103, 25);
+        jButtonPorHabitacion.setBounds(317, 207, 93, 23);
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel17.setText("Huesped:");
         jPanel8.add(jLabel17);
         jLabel17.setBounds(268, 281, 67, 19);
         jPanel8.add(jTextFieldHuesped);
-        jTextFieldHuesped.setBounds(340, 280, 243, 22);
+        jTextFieldHuesped.setBounds(340, 280, 243, 20);
         jPanel8.add(jTextFieldHab);
-        jTextFieldHab.setBounds(388, 137, 46, 22);
+        jTextFieldHab.setBounds(388, 137, 46, 20);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel8.add(jLabel28);
@@ -363,7 +363,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel9.add(jButton1);
-        jButton1.setBounds(321, 176, 103, 25);
+        jButton1.setBounds(321, 176, 93, 23);
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -386,11 +386,11 @@ public class Consultas extends javax.swing.JFrame {
         jPanel9.add(jLabel22);
         jLabel22.setBounds(340, 410, 39, 19);
         jPanel9.add(jTextFieldSencilla);
-        jTextFieldSencilla.setBounds(390, 330, 39, 22);
+        jTextFieldSencilla.setBounds(390, 330, 39, 20);
         jPanel9.add(jTextFieldDeluxe);
-        jTextFieldDeluxe.setBounds(390, 370, 39, 22);
+        jTextFieldDeluxe.setBounds(390, 370, 39, 20);
         jPanel9.add(jTextFieldSuits);
-        jTextFieldSuits.setBounds(390, 410, 39, 22);
+        jTextFieldSuits.setBounds(390, 410, 39, 20);
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel9.add(jLabel29);
@@ -436,7 +436,7 @@ public class Consultas extends javax.swing.JFrame {
             }
         });
         jPanel10.add(jButtonHistoricoHuesped);
-        jButtonHistoricoHuesped.setBounds(325, 13, 103, 25);
+        jButtonHistoricoHuesped.setBounds(325, 13, 93, 23);
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel10.add(jLabel30);
@@ -504,8 +504,13 @@ public class Consultas extends javax.swing.JFrame {
         jLabel15.setBounds(472, 61, 97, 26);
 
         jButtonMenu.setText("MENU");
+        jButtonMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonMenuMouseClicked(evt);
+            }
+        });
         jPanel6.add(jButtonMenu);
-        jButtonMenu.setBounds(290, 410, 79, 25);
+        jButtonMenu.setBounds(290, 410, 79, 23);
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel6.add(jLabel31);
@@ -762,6 +767,13 @@ public class Consultas extends javax.swing.JFrame {
         }    
         
     }//GEN-LAST:event_jPanel5MouseClicked
+
+    private void jButtonMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonMenuMouseClicked
+        // TODO add your handling code here:
+        Menu n = new Menu();
+        n.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonMenuMouseClicked
 
 
     /**

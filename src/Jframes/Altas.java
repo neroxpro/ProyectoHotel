@@ -5,6 +5,8 @@
  */
 package Jframes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fer
@@ -113,7 +115,26 @@ public class Altas extends javax.swing.JFrame {
 
     private void jButtonregistarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonregistarMouseClicked
         // TODO add your handling code here:
+        String cuenta, contraseña, parte1, parte2, query;
+        cuenta = this.jTextFieldUsuario.getText().trim();
+        char [] passw = this.jPasswordFieldcontra.getPassword();
+        int j=0;
         
+        contraseña = new String(passw);
+        /*esta parte da de alta en el anterior base de datos, es qle que tienes que cambiar
+        parte1 = "insert into cuentas values (";
+        parte2 = "'"+cuenta+"',"+" MD5 ('"+ contraseña+"'))";
+        query = parte1 + parte2;
+        System.out.println(query);
+        int j = this.conn.Update(query); */
+        if(j > 0){
+            JOptionPane.showMessageDialog(this, "Cuenta Registrada...");
+            System.out.println("Cuenta Registrada...");
+            
+            Login l = new Login();
+            l.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_jButtonregistarMouseClicked
 
     private void jButtonregistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonregistarActionPerformed
@@ -123,6 +144,9 @@ public class Altas extends javax.swing.JFrame {
 
     private void jButtonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegresarMouseClicked
         // TODO add your handling code here:
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonRegresarMouseClicked
 
     /**
