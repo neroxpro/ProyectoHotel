@@ -52,21 +52,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonEntrar);
-        jButtonEntrar.setBounds(200, 470, 79, 25);
+        jButtonEntrar.setBounds(230, 470, 73, 23);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel1.setText("Usuario:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(30, 330, 100, 19);
         jPanel1.add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(140, 330, 231, 22);
+        jTextFieldUsuario.setBounds(140, 330, 231, 20);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel2.setText("Contraseña:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 420, 110, 17);
         jPanel1.add(jPasswordFieldcontra);
-        jPasswordFieldcontra.setBounds(130, 420, 231, 22);
+        jPasswordFieldcontra.setBounds(140, 420, 231, 20);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(380, 220, 0, 0);
 

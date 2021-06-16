@@ -101,7 +101,7 @@ public class Servicios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonConfirmar);
-        jButtonConfirmar.setBounds(132, 441, 93, 23);
+        jButtonConfirmar.setBounds(132, 441, 120, 23);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class Servicios extends javax.swing.JFrame {
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(525, 441, 93, 23);
         jPanel1.add(jTextFieldHabServicios);
-        jTextFieldHabServicios.setBounds(384, 88, 66, 20);
+        jTextFieldHabServicios.setBounds(384, 78, 60, 30);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel1.add(jLabel3);

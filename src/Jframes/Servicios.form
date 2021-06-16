@@ -142,7 +142,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="132" y="441" width="-1" height="-1"/>
+              <AbsoluteConstraints x="132" y="441" width="120" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -162,7 +162,7 @@
         <Component class="javax.swing.JTextField" name="jTextFieldHabServicios">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="384" y="88" width="66" height="-1"/>
+              <AbsoluteConstraints x="384" y="78" width="60" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

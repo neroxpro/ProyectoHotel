@@ -70,7 +70,7 @@ public class Checkout extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(500, 370, 61, 23);
+        jButtonSalir.setBounds(500, 370, 80, 23);
         jPanel1.add(jTextFieldNumHab);
         jTextFieldNumHab.setBounds(412, 208, 64, 20);
 
