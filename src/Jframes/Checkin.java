@@ -47,8 +47,6 @@ public class Checkin extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jComboBoxCiudad = new javax.swing.JComboBox<>();
-        jSpinnerHabitacion = new javax.swing.JSpinner();
-        jSpinnerPiso = new javax.swing.JSpinner();
         jRadioButtonHabSencilla = new javax.swing.JRadioButton();
         jRadioButtonHabDeluxe = new javax.swing.JRadioButton();
         jRadioButtonHabSuits = new javax.swing.JRadioButton();
@@ -60,6 +58,8 @@ public class Checkin extends javax.swing.JFrame {
         jDateChooserIngreso = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
         jTextFielDias = new javax.swing.JTextField();
+        jComboBoxPiso = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,77 +87,67 @@ public class Checkin extends javax.swing.JFrame {
         jLabel4.setBounds(210, 180, 125, 19);
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Habitacion:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(72, 229, 79, 19);
+        jLabel6.setBounds(320, 280, 79, 19);
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel7.setText("Total de Ocupantes:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(12, 329, 139, 19);
+        jLabel7.setBounds(90, 330, 139, 19);
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tipo de Habitacion:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(30, 280, 136, 19);
+        jLabel8.setBounds(80, 219, 136, 30);
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel9.setText("Piso:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(409, 229, 36, 19);
+        jLabel9.setBounds(600, 220, 36, 19);
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel10.setText("Personas Extra:");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(348, 329, 111, 19);
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(185, 66, 394, 20);
+        jTextFieldNombre.setBounds(185, 66, 394, 22);
 
         jComboBoxCiudad.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jComboBoxCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aguascalientes", "Ensenada", "Mexicali", "Tijuana", "La Paz", "Los Cabos", "Campeche", "Ciudad del Carmen", "Tapachula", "Tuxtla Gutiérrez", "Chihuahua", "Juárez", "La Laguna", "Monclova-Frontera", "Piedras Negras", "Saltillo", "Colima-Villa de Álvarez", "Manzanillo", "Tecomán", "Valle de México", "Durango", "Celaya", "Guanajuato", "Irapuato", "La Piedad-Pénjamo", "León", "Salamanca", "San Francisco del Rincón", "Acapulco", "Chilpancingo", "Pachuca", "Tula", "Tulancingo", "Guadalajara", "Ocotlán", "Puerto Vallarta", "Morelia", "Uruapan", "Zamora-Jacona", "Cuautla", "Cuernavaca", "Toluca", "Tepic", "Monterrey", "Oaxaca", "Tehuantepec-Salina Cruz", "Puebla-Tlaxcala", "Tehuacán", "Querétaro", "San Juan del Río", "Cancún", "Chetumal", "Rioverde-Ciudad Fernández", "San Luis Potosí-Soledad", "Culiacán", "Los Mochis", "Mazatlán", "Ciudad Obregón", "Guaymas", "Hermosillo", "Cárdenas", "Villahermosa", "Ciudad Victoria", "Matamoros", "Nuevo Laredo", "Reynosa-Río Bravo", "Tampico-Pánuco", "Tlaxcala-Apizaco", "Coatzacoalcos", "Córdoba", "Minatitlán", "Orizaba", "Poza Rica", "Veracruz", "Xalapa", "Mérida", "Zacatecas-Guadalupe", "Otra" }));
         jPanel1.add(jComboBoxCiudad);
         jComboBoxCiudad.setBounds(169, 118, 197, 21);
 
-        jSpinnerHabitacion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSpinnerHabitacionMouseClicked(evt);
-            }
-        });
-        jPanel1.add(jSpinnerHabitacion);
-        jSpinnerHabitacion.setBounds(244, 222, 47, 34);
-        jPanel1.add(jSpinnerPiso);
-        jSpinnerPiso.setBounds(530, 222, 47, 34);
-
         buttonGroup2.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSencilla.setText("Sencilla");
         jPanel1.add(jRadioButtonHabSencilla);
-        jRadioButtonHabSencilla.setBounds(216, 274, 71, 23);
+        jRadioButtonHabSencilla.setBounds(250, 220, 75, 25);
 
         buttonGroup2.add(jRadioButtonHabDeluxe);
         jRadioButtonHabDeluxe.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabDeluxe.setText("Deluxe");
         jPanel1.add(jRadioButtonHabDeluxe);
-        jRadioButtonHabDeluxe.setBounds(348, 274, 65, 23);
+        jRadioButtonHabDeluxe.setBounds(370, 220, 69, 25);
 
         buttonGroup2.add(jRadioButtonHabSuits);
         jRadioButtonHabSuits.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSuits.setText("Suit");
         jPanel1.add(jRadioButtonHabSuits);
-        jRadioButtonHabSuits.setBounds(530, 274, 49, 23);
+        jRadioButtonHabSuits.setBounds(480, 220, 51, 25);
 
         jComboBoxTotOcupantes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", " " }));
         jPanel1.add(jComboBoxTotOcupantes);
-        jComboBoxTotOcupantes.setBounds(257, 328, 31, 20);
+        jComboBoxTotOcupantes.setBounds(257, 328, 40, 30);
 
         jComboBoxPerExtra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", " " }));
         jPanel1.add(jComboBoxPerExtra);
-        jComboBoxPerExtra.setBounds(547, 328, 31, 20);
+        jComboBoxPerExtra.setBounds(490, 330, 40, 30);
 
         jButtonRecibo.setText("RECIBO");
         jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 430, 71, 23);
+        jButtonRecibo.setBounds(130, 430, 75, 25);
 
         jButtonRegistrar.setText("REGISTRAR");
         jButtonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -174,7 +164,7 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(330, 430, 89, 23);
+        jButtonRegistrar.setBounds(330, 430, 99, 25);
 
         jButtonSalir.setText("SALIR");
         jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -183,15 +173,32 @@ public class Checkin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(540, 430, 61, 23);
+        jButtonSalir.setBounds(540, 430, 67, 25);
         jPanel1.add(jDateChooserIngreso);
-        jDateChooserIngreso.setBounds(350, 180, 108, 20);
+        jDateChooserIngreso.setBounds(350, 180, 120, 30);
 
         jLabel11.setText("Días que se va a quedar: ");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(158, 379, 140, 14);
+        jLabel11.setBounds(158, 379, 140, 16);
         jPanel1.add(jTextFielDias);
-        jTextFielDias.setBounds(317, 376, 76, 20);
+        jTextFielDias.setBounds(317, 376, 76, 22);
+
+        jComboBoxPiso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        jPanel1.add(jComboBoxPiso);
+        jComboBoxPiso.setBounds(650, 220, 40, 30);
+
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField1MouseClicked(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(420, 280, 70, 30);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco6.png"))); // NOI18N
         jPanel1.add(jLabel12);
@@ -210,25 +217,6 @@ public class Checkin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jSpinnerHabitacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSpinnerHabitacionMouseClicked
-        // TODO add your handling code here:
-        String tipo="";
-        int p;
-        Mapa ma ;
-        p = (int)this.jSpinnerPiso.getValue();
-                
-        if(this.jRadioButtonHabSencilla.isSelected()){
-            tipo = "sencilla";
-        }else if(this.jRadioButtonHabDeluxe.isSelected()){
-            tipo = "deluxe";
-        }else if (this.jRadioButtonHabSuits.isSelected()){
-            tipo = "suit";
-        }
-        
-        ma = new Mapa(p,tipo);
-        ma.setVisible(true);
-    }//GEN-LAST:event_jSpinnerHabitacionMouseClicked
 
     private void jButtonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRegistrarMouseClicked
         // TODO add your handling code here:
@@ -255,11 +243,11 @@ public class Checkin extends javax.swing.JFrame {
         origen = (String)this.jComboBoxCiudad.getSelectedItem();
         Date temp = this.jDateChooserIngreso.getDate();
         ingreso=temp.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        piso = (int)this.jSpinnerPiso.getValue();
+        piso = (int)this.jComboBoxPiso.getItemCount();
         pextras = Integer.parseInt(this.jComboBoxPerExtra.getSelectedItem().toString());
         //pextras = (int)this.jComboBoxPerExtra.getSelectedItem();
         total = lp+pextras;
-        nhab = (int)this.jSpinnerHabitacion.getValue();
+        nhab = (int)this.jComboBoxPiso.getItemCount();
         dias = Integer.parseInt(this.jTextFielDias.getText());
         
         
@@ -275,6 +263,30 @@ public class Checkin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonSalirMouseClicked
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked
+        // TODO add your handling code here:
+                        String tipo="";
+        int p;
+        Mapa ma ;
+        p = (int)this.jComboBoxPiso.getItemCount();
+
+        if(this.jRadioButtonHabSencilla.isSelected()){
+            tipo = "sencilla";
+        }else if(this.jRadioButtonHabDeluxe.isSelected()){
+            tipo = "deluxe";
+        }else if (this.jRadioButtonHabSuits.isSelected()){
+            tipo = "suit";
+        }
+
+        ma = new Mapa(p,tipo);
+        ma.setVisible(true);
+    }//GEN-LAST:event_jTextField1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -318,6 +330,7 @@ public class Checkin extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JComboBox<String> jComboBoxCiudad;
     private javax.swing.JComboBox<String> jComboBoxPerExtra;
+    private javax.swing.JComboBox<String> jComboBoxPiso;
     private javax.swing.JComboBox<String> jComboBoxTotOcupantes;
     private com.toedter.calendar.JDateChooser jDateChooserIngreso;
     private javax.swing.JLabel jLabel1;
@@ -335,9 +348,8 @@ public class Checkin extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonHabDeluxe;
     private javax.swing.JRadioButton jRadioButtonHabSencilla;
     private javax.swing.JRadioButton jRadioButtonHabSuits;
-    private javax.swing.JSpinner jSpinnerHabitacion;
-    private javax.swing.JSpinner jSpinnerPiso;
     private javax.swing.JTextField jTextFielDias;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
 }
