@@ -12,6 +12,8 @@ import controlMySql.MySqlConn;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -124,6 +126,11 @@ public class Checkin extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jRadioButtonHabSencilla.setText("Sencilla");
+        jRadioButtonHabSencilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonHabSencillaActionPerformed(evt);
+            }
+        });
         jPanel1.add(jRadioButtonHabSencilla);
         jRadioButtonHabSencilla.setBounds(250, 220, 71, 23);
 
@@ -298,6 +305,13 @@ public class Checkin extends javax.swing.JFrame {
  //       ma = new Mapa(p,tipo);
  //       ma.setVisible(true);
     }//GEN-LAST:event_jTextField1MouseClicked
+
+    private void jRadioButtonHabSencillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonHabSencillaActionPerformed
+        String valores[] = {"1","2"};
+        ComboBoxModel<String> model = new DefaultComboBoxModel(valores);
+        
+        this.jComboBoxTotOcupantes.setModel(model);
+    }//GEN-LAST:event_jRadioButtonHabSencillaActionPerformed
 
     /**
      * @param args the command line arguments
