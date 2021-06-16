@@ -129,7 +129,9 @@ public class Portada extends javax.swing.JFrame {
 
     private void jButtonloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonloginMouseClicked
         // TODO add your handling code here:
-        
+        Login l = new Login();
+        l.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonloginMouseClicked
 
     /**
