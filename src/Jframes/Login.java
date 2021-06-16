@@ -5,6 +5,7 @@
  */
 package Jframes;
 
+import controlMySql.MySqlConn;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -14,7 +15,7 @@ import org.apache.commons.codec.digest.DigestUtils;
  * @author Fer
  */
 public class Login extends javax.swing.JFrame {
-
+    MySqlConn conn=new MySqlConn();
     /**
      * Creates new form Login
      */
@@ -114,10 +115,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String cuenta, contraseña, query;
         cuenta = this.jTextFieldUsuario.getText().trim();
-        query = "select * from cuentas where cuenta = "+"'"+cuenta+"'";
+        query = "select * from empleados where usuario = "+"'"+cuenta+"'";
         this.conn.Consult(query);
         try{
-            String contraseñaMySql = this.conn.rs.getString(2);
+            String contraseñaMySql = this.conn.rs.getString(3);
             char [] passw = this.jPasswordFieldcontra.getPassword();
             contraseña = new String(passw);
             String contraseñaencriptada = DigestUtils.md5Hex(contraseña);

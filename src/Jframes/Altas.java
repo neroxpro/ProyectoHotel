@@ -5,6 +5,7 @@
  */
 package Jframes;
 
+import controlMySql.MySqlConn;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Fer
  */
 public class Altas extends javax.swing.JFrame {
-
+    MySqlConn conn=new MySqlConn();
     /**
      * Creates new form Login
      */
@@ -121,12 +122,12 @@ public class Altas extends javax.swing.JFrame {
         int j=0;
         
         contraseña = new String(passw);
-        /*esta parte da de alta en el anterior base de datos, es qle que tienes que cambiar
-        parte1 = "insert into cuentas values (";
-        parte2 = "'"+cuenta+"',"+" MD5 ('"+ contraseña+"'))";
+        /*esta parte da de alta en el anterior base de datos, es qle que tienes que cambiar*/
+        parte1 = "insert into empleados(usuario,contraseña) values (";
+        parte2 = "'"+cuenta+"',"+" MD5 ('"+contraseña+"'))";
         query = parte1 + parte2;
         System.out.println(query);
-        int j = this.conn.Update(query); */
+        j = this.conn.Update(query); 
         if(j > 0){
             JOptionPane.showMessageDialog(this, "Cuenta Registrada...");
             System.out.println("Cuenta Registrada...");
