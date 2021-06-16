@@ -40,6 +40,14 @@ public class Galeria extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,6 +147,38 @@ public class Galeria extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("GYM", jPanel6);
 
+        jPanel7.setLayout(null);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/flamingos.jpg"))); // NOI18N
+        jPanel7.add(jLabel7);
+        jLabel7.setBounds(110, -40, 760, 530);
+
+        jTabbedPane1.addTab("postal", jPanel7);
+
+        jPanel8.setLayout(null);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Punta-Cocos.png"))); // NOI18N
+        jPanel8.add(jLabel8);
+        jLabel8.setBounds(0, 0, 760, 520);
+
+        jTabbedPane1.addTab("Vista", jPanel8);
+
+        jPanel9.setLayout(null);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/alberca.jpg"))); // NOI18N
+        jPanel9.add(jLabel9);
+        jLabel9.setBounds(0, 0, 760, 530);
+
+        jTabbedPane1.addTab("Alberca", jPanel9);
+
+        jPanel10.setLayout(null);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/casa-punta-coco__1.jpg"))); // NOI18N
+        jPanel10.add(jLabel10);
+        jLabel10.setBounds(0, 0, 760, 530);
+
+        jTabbedPane1.addTab("Mar", jPanel10);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -190,17 +230,25 @@ public class Galeria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
