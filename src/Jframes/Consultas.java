@@ -126,6 +126,8 @@ public class Consultas extends javax.swing.JFrame {
         jPanel4.add(CP);
         jPanel4.validate();
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
