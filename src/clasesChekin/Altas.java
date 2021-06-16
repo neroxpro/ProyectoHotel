@@ -1,5 +1,6 @@
 package clasesChekin;
 
+import Jframes.ReciboRegistro;
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -90,5 +91,26 @@ public class Altas {
         int j3 = this.conn.Update(query4);
         
         int j1 = this.conn.Update(query2);
+        
+        ReciboRegistro r = new ReciboRegistro();
+        String ing,p,sali,t,pe,li,nuh;
+        ing = ""+ingreso.getDayOfMonth()+"-"+ingreso.getMonth()+"-"+ingreso.getYear();
+        sali = ""+salida.getDayOfMonth()+"-"+salida.getMonth()+"-"+salida.getYear();
+        nuh = String.valueOf(nhab);
+        t = String.valueOf(total);
+        pe = String.valueOf(pextras);
+        p = String.valueOf(piso);
+        
+        if (thab == "sencilla"){
+            li = String.valueOf(1);
+        }else if (thab == "deluxe"){
+            li = String.valueOf(2);
+        }else{
+            li = String.valueOf(3);
+        }
+    
+        
+        r.agrega(nom, origen,ing ,sali,nuh , thab,t , pe, li, p);
+        r.setVisible(true);
     }
 }
