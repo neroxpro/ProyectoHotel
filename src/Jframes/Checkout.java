@@ -30,7 +30,6 @@ public class Checkout extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButtonRecibo = new javax.swing.JButton();
         jButtonSalida = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jTextFieldNumHab = new javax.swing.JTextField();
@@ -50,22 +49,23 @@ public class Checkout extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(211, 209, 160, 19);
 
-        jButtonRecibo.setText("RECIBO");
-        jButtonRecibo.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalida.setText("SALIDA");
+        jButtonSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonReciboActionPerformed(evt);
+                jButtonSalidaActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonRecibo);
-        jButtonRecibo.setBounds(130, 450, 71, 23);
-
-        jButtonSalida.setText("SALIDA");
         jPanel1.add(jButtonSalida);
-        jButtonSalida.setBounds(320, 450, 69, 23);
+        jButtonSalida.setBounds(190, 370, 69, 23);
 
-        jButtonSalir.setText("SALIR");
+        jButtonSalir.setText("MENU");
+        jButtonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSalirMouseClicked(evt);
+            }
+        });
         jPanel1.add(jButtonSalir);
-        jButtonSalir.setBounds(530, 450, 61, 23);
+        jButtonSalir.setBounds(500, 370, 61, 23);
         jPanel1.add(jTextFieldNumHab);
         jTextFieldNumHab.setBounds(412, 208, 64, 20);
 
@@ -87,10 +87,16 @@ public class Checkout extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReciboActionPerformed
+    private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButtonReciboActionPerformed
+    }//GEN-LAST:event_jButtonSalidaActionPerformed
+
+    private void jButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseClicked
+        // TODO add your handling code here:
+        Menu m = new Menu();
+        m.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonSalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -128,7 +134,6 @@ public class Checkout extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonRecibo;
     private javax.swing.JButton jButtonSalida;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabel1;
