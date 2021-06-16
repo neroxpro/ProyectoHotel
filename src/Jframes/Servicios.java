@@ -47,7 +47,6 @@ public class Servicios extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButtonConfirmar = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
-        jButtonLimpiar = new javax.swing.JButton();
         jTextFieldHabServicios = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
@@ -112,15 +111,6 @@ public class Servicios extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(525, 441, 93, 23);
-
-        jButtonLimpiar.setText("LIMPIAR");
-        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLimpiarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonLimpiar);
-        jButtonLimpiar.setBounds(328, 441, 73, 23);
         jPanel1.add(jTextFieldHabServicios);
         jTextFieldHabServicios.setBounds(384, 88, 66, 20);
 
@@ -149,7 +139,8 @@ public class Servicios extends javax.swing.JFrame {
 
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
         // TODO add your handling code here:
-
+        try{
+            
         if(this.jCheckBoxCuart.isSelected()){
                 sum+=300;
             } if(this.jCheckBoxBar.isSelected()){
@@ -163,28 +154,30 @@ public class Servicios extends javax.swing.JFrame {
             }
         JOptionPane.showMessageDialog(this,"Total: "+sum);
         
-        String query="UPDATE ventas SET gastosExtras="+sum+" WHERE ocupaciones.ventas_id= ocupaciones.habitaciones_numero="+"'"+this.jTextFieldHabServicios.getText().trim()+"'";
+        String query="update ventas, ocupaciones, habitaciones set ventas.gastosExtras=ventas.gastosExtras+"+sum+" WHERE ventas.id=ocupaciones.Ventas_id	and habitaciones.numero=ocupaciones.habitaciones_numero and habitaciones.numero="+"'"+this.jTextFieldHabServicios.getText().trim()+"'";
         
 
         
         int j=this.conn.Update(query);//Ejecuta accion de alta en la BD
         System.out.println("Numero de registros afectados por la accion"+j);
+        this.jCheckBoxCuart.setSelected(false);
+        this.jCheckBoxBar.setSelected(false);
+        this.jCheckBoxTintoreria.setSelected(false);
+        this.jCheckBoxSpa.setSelected(false);
+        this.jCheckBoxNiñera.setSelected(false);
+        this.jTextFieldHabServicios.setText("");
+        sum=0;
+        }catch (Exception e) {
+            System.out.println(e);
+            
+        }
+        
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButtonSalirActionPerformed
-
-    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
-        // TODO add your handling code here:
-        this.jCheckBoxCuart.setSelected(false);
-        this.jCheckBoxBar.setSelected(false);
-        this.jCheckBoxTintoreria.setSelected(false);
-        this.jCheckBoxSpa.setSelected(false);
-        this.jCheckBoxNiñera.setSelected(false);
-        sum=0;
-    }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,7 +216,6 @@ public class Servicios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonConfirmar;
-    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JCheckBox jCheckBoxBar;
     private javax.swing.JCheckBox jCheckBoxCuart;

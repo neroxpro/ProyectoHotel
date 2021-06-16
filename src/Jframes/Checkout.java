@@ -64,6 +64,11 @@ public class Checkout extends javax.swing.JFrame {
                 jButtonSalirMouseClicked(evt);
             }
         });
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(500, 370, 61, 23);
         jPanel1.add(jTextFieldNumHab);
@@ -97,6 +102,10 @@ public class Checkout extends javax.swing.JFrame {
         m.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonSalirMouseClicked
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
     /**
      * @param args the command line arguments
