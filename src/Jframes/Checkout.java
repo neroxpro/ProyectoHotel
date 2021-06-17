@@ -5,6 +5,7 @@
  */
 package Jframes;
 
+import controlMySql.MySqlConn;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Fer
  */
 public class Checkout extends javax.swing.JFrame {
-
+    MySqlConn conn=new MySqlConn();
     /**
      * Creates new form Checkout
      */
@@ -73,6 +74,12 @@ public class Checkout extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(500, 370, 80, 23);
+
+        jTextFieldNumHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNumHabActionPerformed(evt);
+            }
+        });
         jPanel1.add(jTextFieldNumHab);
         jTextFieldNumHab.setBounds(412, 208, 64, 20);
 
@@ -96,9 +103,13 @@ public class Checkout extends javax.swing.JFrame {
 
     private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
         try{
+        
         ReciboSalida recibo = new ReciboSalida(Integer.parseInt(this.jTextFieldNumHab.getText()));
         recibo.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         recibo.setVisible(true);
+        String hab="update habitaciones set ocupacion=0 where numero='"+this.jTextFieldNumHab.getText().trim()+"'";
+        String query1=hab;  
+        int j = this.conn.Update(query1);
         }catch (Exception e) {
             JOptionPane.showMessageDialog(this,"Cuarto no valido o vacio");
             
@@ -115,6 +126,10 @@ public class Checkout extends javax.swing.JFrame {
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jTextFieldNumHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNumHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNumHabActionPerformed
 
     /**
      * @param args the command line arguments
