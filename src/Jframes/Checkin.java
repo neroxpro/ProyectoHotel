@@ -191,6 +191,11 @@ public class Checkin extends javax.swing.JFrame {
                 jButtonSalirMouseClicked(evt);
             }
         });
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonSalir);
         jButtonSalir.setBounds(540, 430, 100, 23);
         jPanel1.add(jDateChooserIngreso);
@@ -287,7 +292,10 @@ public class Checkin extends javax.swing.JFrame {
 
     private void jButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseClicked
         // TODO add your handling code here:
+        Menu mu = new Menu();
+        mu.setVisible(true);
         this.dispose();
+  
     }//GEN-LAST:event_jButtonSalirMouseClicked
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -349,6 +357,10 @@ public class Checkin extends javax.swing.JFrame {
     private void jComboBoxPerExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPerExtraActionPerformed
         JOptionPane.showMessageDialog(this,"Son 500$ mas por persona ");
     }//GEN-LAST:event_jComboBoxPerExtraActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
     /**
      * @param args the command line arguments

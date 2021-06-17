@@ -60,21 +60,21 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonEntrar);
-        jButtonEntrar.setBounds(360, 540, 79, 25);
+        jButtonEntrar.setBounds(360, 540, 73, 23);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel1.setText("Usuario:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(170, 400, 100, 19);
         jPanel1.add(jTextFieldUsuario);
-        jTextFieldUsuario.setBounds(260, 400, 231, 22);
+        jTextFieldUsuario.setBounds(260, 400, 231, 20);
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
         jLabel2.setText("Contraseña:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(150, 490, 110, 17);
         jPanel1.add(jPasswordFieldcontra);
-        jPasswordFieldcontra.setBounds(260, 490, 231, 22);
+        jPasswordFieldcontra.setBounds(260, 490, 231, 20);
         jPanel1.add(jLabel4);
         jLabel4.setBounds(380, 220, 0, 0);
 
@@ -99,7 +99,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButtonMUSICA);
-        jButtonMUSICA.setBounds(580, 110, 90, 25);
+        jButtonMUSICA.setBounds(580, 110, 90, 23);
 
         jButtonSTOP.setText("STOP");
         jButtonSTOP.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,8 +107,13 @@ public class Login extends javax.swing.JFrame {
                 jButtonSTOPMouseClicked(evt);
             }
         });
+        jButtonSTOP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSTOPActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButtonSTOP);
-        jButtonSTOP.setBounds(590, 170, 65, 25);
+        jButtonSTOP.setBounds(590, 170, 59, 23);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user-login.png"))); // NOI18N
         jPanel1.add(jLabel3);
@@ -149,7 +154,7 @@ public class Login extends javax.swing.JFrame {
             contraseña = new String(passw);
             String contraseñaencriptada = DigestUtils.md5Hex(contraseña);
             if(contraseñaMySql.equals(contraseñaencriptada)){
-                JOptionPane.showMessageDialog(this, "Bienvenido "+this.conn.rs.getString(1)+" al sistema"); 
+                JOptionPane.showMessageDialog(this, "Bienvenido "+this.conn.rs.getString(2)+" al sistema"); 
                 Menu m = new Menu();
                 m.setVisible(true);
                 
@@ -189,10 +194,15 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonSTOPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSTOPMouseClicked
         // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButtonSTOPMouseClicked
+
+    private void jButtonSTOPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSTOPActionPerformed
+        // TODO add your handling code here:
         AudioClip piano2;
         piano2=java.applet.Applet.newAudioClip(getClass().getResource("/Jframes/piano2.wav"));
         piano2.stop();
-    }//GEN-LAST:event_jButtonSTOPMouseClicked
+    }//GEN-LAST:event_jButtonSTOPActionPerformed
 
     /**
      * @param args the command line arguments
