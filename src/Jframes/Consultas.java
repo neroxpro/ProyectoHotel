@@ -178,6 +178,7 @@ public class Consultas extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jTextFieldSencilla = new javax.swing.JTextField();
         jTextFieldDeluxe = new javax.swing.JTextField();
+        jComboBoxPisoDisp = new javax.swing.JComboBox<>();
         jTextFieldSuits = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -391,6 +392,10 @@ public class Consultas extends javax.swing.JFrame {
         jTextFieldSencilla.setBounds(390, 330, 39, 20);
         jPanel9.add(jTextFieldDeluxe);
         jTextFieldDeluxe.setBounds(390, 370, 39, 20);
+
+        jComboBoxPisoDisp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        jPanel9.add(jComboBoxPisoDisp);
+        jComboBoxPisoDisp.setBounds(460, 120, 50, 30);
         jPanel9.add(jTextFieldSuits);
         jTextFieldSuits.setBounds(390, 410, 39, 20);
 
@@ -823,6 +828,7 @@ public class Consultas extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPorHabitacion;
     private javax.swing.JButton jButtonPorNombre;
     private javax.swing.JButton jButtonPorNombre1;
+    private javax.swing.JComboBox<String> jComboBoxPisoDisp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

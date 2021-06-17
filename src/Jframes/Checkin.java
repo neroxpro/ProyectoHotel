@@ -302,7 +302,8 @@ public class Checkin extends javax.swing.JFrame {
         
         Mapa ma ;
         int p = Integer.parseInt(this.jComboBoxPiso.getItemAt(jComboBoxPiso.getSelectedIndex()));
-
+        Mapa2 mapa = new Mapa2(p);
+        System.out.println("Mapa"+p);
         if(this.jRadioButtonHabSencilla.isSelected()){
             tipo = "sencilla";
         }else if(this.jRadioButtonHabDeluxe.isSelected()){
@@ -310,7 +311,7 @@ public class Checkin extends javax.swing.JFrame {
         }else if (this.jRadioButtonHabSuits.isSelected()){
             tipo = "suit";
         }
-        Mapa2 mapa = new Mapa2(p);
+        
         int result = JOptionPane.showConfirmDialog(null, mapa,
                   "Edit Player", JOptionPane.OK_CANCEL_OPTION,
                   JOptionPane.PLAIN_MESSAGE);

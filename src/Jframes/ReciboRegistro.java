@@ -16,6 +16,7 @@ public class ReciboRegistro extends javax.swing.JFrame {
      */
     public ReciboRegistro() {
         initComponents();
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
