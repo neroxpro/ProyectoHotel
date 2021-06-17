@@ -5,14 +5,21 @@
  */
 package Jframes;
 
+
 import controlMySql.MySqlConn;
+import java.awt.Image;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.sql.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -80,6 +87,21 @@ public class ReciboSalida extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+        String au [] = new String[13];
+        au[0] = "Punta Coco";
+        au[1] = "Paraiso con aroma a coco";
+        au[2] = "Fecha del dia: "+this.jTextFieldfechadia.getText();
+        au[3] = "Ubicacion: "+this.jLabelUbicacion.getText();
+        au[4] = "Nombre del huesped:"+this.jTextFieldNombre.getText();
+        au[5] = "Ciudad de origen: "+this.jTextFieldCiudad.getText();
+        au[6] = "Fecha de ingreso: "+this.jTextFieldfechaing.getText();
+        au[7] = "Fecha de salida: "+this.jTextFieldfechasal.getText();
+        au[8] = "Tipo de habitacion: "+this.jTextFieldtipohab.getText();
+        au[9] = "Costo: "+this.jTextFieldcosto.getText();
+        au[10] = "Dias que se quedo en el hotel: "+this.jTextFielddiasquequedo.getText();
+        au[11] = "Total a pagar sin costos extras: $"+this.jTextFieldcostosinextra.getText();
+        au[12] = "Total a pagar con costos extras: $"+this.jTextFieldcostoconextra.getText();
+        
     }
     
 
@@ -106,7 +128,7 @@ public class ReciboSalida extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabelUbicacion = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jTextFieldCiudad = new javax.swing.JTextField();
         jTextFieldfechaing = new javax.swing.JTextField();
@@ -179,9 +201,9 @@ public class ReciboSalida extends javax.swing.JFrame {
         jPanel1.add(jLabel13);
         jLabel13.setBounds(390, 350, 151, 14);
 
-        jLabel15.setText("Calle Caguama 6, 77310, Isla de Holbox, Cancún-Riviera Maya, Quintana Roo, MÉXICO.");
-        jPanel1.add(jLabel15);
-        jLabel15.setBounds(210, 140, 424, 14);
+        jLabelUbicacion.setText("Calle Caguama 6, 77310, Isla de Holbox, Cancún-Riviera Maya, Quintana Roo, MÉXICO.");
+        jPanel1.add(jLabelUbicacion);
+        jLabelUbicacion.setBounds(210, 140, 424, 14);
 
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,6 +300,7 @@ public class ReciboSalida extends javax.swing.JFrame {
                 new ReciboSalida().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -287,7 +310,6 @@ public class ReciboSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -298,6 +320,7 @@ public class ReciboSalida extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelUbicacion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldCiudad;
     private javax.swing.JTextField jTextFieldNombre;

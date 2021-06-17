@@ -178,7 +178,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel15">
+        <Component class="javax.swing.JLabel" name="jLabelUbicacion">
           <Properties>
             <Property name="text" type="java.lang.String" value="Calle Caguama 6, 77310, Isla de Holbox, Canc&#xfa;n-Riviera Maya, Quintana Roo, M&#xc9;XICO."/>
           </Properties>
