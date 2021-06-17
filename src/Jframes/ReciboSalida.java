@@ -5,18 +5,84 @@
  */
 package Jframes;
 
+import controlMySql.MySqlConn;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.sql.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fer
  */
 public class ReciboSalida extends javax.swing.JFrame {
 
+    int hab;
+    MySqlConn conn=new MySqlConn();
     /**
      * Creates new form Recibo
      */
-    public ReciboSalida() {
+    public ReciboSalida(){
         initComponents();
     }
+    
+    public ReciboSalida(int hab) {
+        initComponents();
+        int costo;
+                try {
+
+            String query= "SELECT  habitaciones.numero,habitaciones.tipo,ocupaciones.habitaciones_numero,ocupaciones.ingreso,ocupaciones.salida,usuarios.nombre,usuarios.cdOrigen,ventas.cuenta,ventas.gastosExtras from habitaciones,ocupaciones,usuarios,ventas WHERE habitaciones.numero=ocupaciones.habitaciones_numero and usuarios.id=ocupaciones.usuarios_id and ventas.id=ocupaciones.Ventas_id AND ocupaciones.habitaciones_numero="+hab+" AND habitaciones.ocupacion=1";
+            PreparedStatement pstmt=conn.conn.prepareStatement(query);
+            ResultSet rs=pstmt.executeQuery();
+            if(rs.next()){
+                
+                String s1=rs.getString(2);
+                Date s2=rs.getDate(4);//fecha entrada
+                LocalDate lDate =  s2.toLocalDate();                
+                Date s3=rs.getDate(5);// salida
+                
+                LocalDate SDate = s3.toLocalDate();
+                String s4=rs.getString(6);//nombre
+                String s5=rs.getString(7);//ciudad
+                int s6=rs.getInt(8);//cuenta sin gastos extras
+                long diff = DAYS.between(lDate,SDate);
+                if(s1.equalsIgnoreCase("sencilla")){
+                    costo=2000;
+                    this.jTextFieldcosto.setText(String.valueOf(costo));
+                }else if(s1.equalsIgnoreCase("deluxe")){
+                    costo=3200;
+                    this.jTextFieldcosto.setText(String.valueOf(costo));
+                }else if (s1.equalsIgnoreCase("suite")){
+                    costo=4500;
+                    this.jTextFieldcosto.setText(String.valueOf(costo));
+                }
+                int s7=rs.getInt(9);//gastos extras
+                int sumaGastos=s6+s7;
+                
+                this.jTextFieldcostoconextra.setText(String.valueOf(sumaGastos));
+                this.jTextFieldtipohab.setText(s1);
+                this.jTextFieldfechaing.setText(lDate.toString());
+                this.jTextFieldfechasal.setText(SDate.toString());
+                this.jTextFieldNombre.setText(s4);
+                this.jTextFieldCiudad.setText(s5);
+                this.jTextFieldcostosinextra.setText(String.valueOf(s6).trim());
+                this.jTextFieldfechadia.setText(LocalDate.now().toString());
+                this.jTextFielddiasquequedo.setText(String.valueOf(diff));
+            }
+            
+            else{
+                JOptionPane.showMessageDialog(null,"Habitacion no ocupada " + hab);
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,42 +133,42 @@ public class ReciboSalida extends javax.swing.JFrame {
 
         jLabel2.setText("Ubicacion:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 140, 59, 16);
+        jLabel2.setBounds(140, 140, 49, 14);
 
         jLabel3.setText("Hombre del Huesped:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(84, 162, 124, 16);
+        jLabel3.setBounds(84, 162, 103, 14);
 
         jLabel4.setText("Ciudad de origen:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(106, 202, 102, 16);
+        jLabel4.setBounds(106, 202, 85, 14);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha de ingreso:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(105, 237, 120, 16);
+        jLabel5.setBounds(105, 237, 120, 14);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Fecha de salida:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(114, 271, 94, 16);
+        jLabel6.setBounds(114, 271, 78, 14);
 
         jLabel7.setText("Costo:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(170, 320, 50, 16);
+        jLabel7.setBounds(170, 320, 50, 14);
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Tipo de habitacion:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(420, 270, 110, 16);
+        jLabel9.setBounds(420, 270, 91, 14);
 
         jLabel10.setText("Dias que se quedo en el hotel:");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(290, 320, 190, 16);
+        jLabel10.setBounds(290, 320, 190, 14);
 
         jLabel11.setText("Total a pagar sin costos extra:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(110, 350, 200, 16);
+        jLabel11.setBounds(110, 350, 200, 14);
 
         jLabel12.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel12.setText("Salida Completada.                                                        VUELVA PRONTO");
@@ -111,11 +177,11 @@ public class ReciboSalida extends javax.swing.JFrame {
 
         jLabel13.setText("Total a pagar con costos extra:");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(390, 350, 179, 16);
+        jLabel13.setBounds(390, 350, 151, 14);
 
         jLabel15.setText("Calle Caguama 6, 77310, Isla de Holbox, Cancún-Riviera Maya, Quintana Roo, MÉXICO.");
         jPanel1.add(jLabel15);
-        jLabel15.setBounds(210, 140, 499, 16);
+        jLabel15.setBounds(210, 140, 424, 14);
 
         jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,35 +189,33 @@ public class ReciboSalida extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(210, 160, 317, 22);
+        jTextFieldNombre.setBounds(210, 160, 317, 20);
         jPanel1.add(jTextFieldCiudad);
-        jTextFieldCiudad.setBounds(210, 200, 317, 22);
+        jTextFieldCiudad.setBounds(210, 200, 317, 20);
         jPanel1.add(jTextFieldfechaing);
-        jTextFieldfechaing.setBounds(213, 234, 182, 22);
+        jTextFieldfechaing.setBounds(213, 234, 182, 20);
         jPanel1.add(jTextFieldfechasal);
-        jTextFieldfechasal.setBounds(213, 268, 182, 22);
+        jTextFieldfechasal.setBounds(213, 268, 182, 20);
         jPanel1.add(jTextFieldcosto);
-        jTextFieldcosto.setBounds(220, 320, 58, 22);
+        jTextFieldcosto.setBounds(220, 320, 58, 20);
         jPanel1.add(jTextFieldtipohab);
-        jTextFieldtipohab.setBounds(540, 270, 58, 22);
+        jTextFieldtipohab.setBounds(540, 270, 58, 20);
         jPanel1.add(jTextFielddiasquequedo);
-        jTextFielddiasquequedo.setBounds(480, 320, 58, 22);
+        jTextFielddiasquequedo.setBounds(480, 320, 58, 20);
         jPanel1.add(jTextFieldcostosinextra);
-        jTextFieldcostosinextra.setBounds(300, 350, 80, 22);
+        jTextFieldcostosinextra.setBounds(300, 350, 80, 20);
         jPanel1.add(jTextFieldcostoconextra);
-        jTextFieldcostoconextra.setBounds(580, 350, 70, 22);
+        jTextFieldcostoconextra.setBounds(580, 350, 70, 20);
 
         jLabel17.setText("Fecha del dia:");
         jPanel1.add(jLabel17);
-        jLabel17.setBounds(140, 110, 90, 16);
+        jLabel17.setBounds(140, 110, 90, 14);
         jPanel1.add(jTextFieldfechadia);
-        jTextFieldfechadia.setBounds(230, 110, 150, 22);
+        jTextFieldfechadia.setBounds(230, 110, 150, 20);
 
         jLabel14.setText("Gerente: Victor Fernando Ramirez Padilla");
         jPanel1.add(jLabel14);
-        jLabel14.setBounds(280, 470, 250, 16);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/FIRMA.png"))); // NOI18N
+        jLabel14.setBounds(280, 470, 250, 14);
         jPanel1.add(jLabel8);
         jLabel8.setBounds(260, 380, 300, 140);
 
@@ -211,7 +275,7 @@ public class ReciboSalida extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ReciboRegistro().setVisible(true);
+                new ReciboSalida().setVisible(true);
             }
         });
     }
