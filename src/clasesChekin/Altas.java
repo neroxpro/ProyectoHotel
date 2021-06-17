@@ -4,6 +4,7 @@ import Jframes.ReciboRegistro;
 import controlMySql.MySqlConn;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 public class Altas {
     String nom,thab,origen;
@@ -93,6 +94,7 @@ public class Altas {
         int j1 = this.conn.Update(query2);
         
         ReciboRegistro r = new ReciboRegistro();
+        r.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         String ing,p,sali,t,pe,li,nuh;
         ing = ""+ingreso.getDayOfMonth()+"-"+ingreso.getMonth()+"-"+ingreso.getYear();
         sali = ""+salida.getDayOfMonth()+"-"+salida.getMonth()+"-"+salida.getYear();
