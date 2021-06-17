@@ -5,6 +5,8 @@
  */
 package Jframes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fer
@@ -93,7 +95,14 @@ public class Checkout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalidaActionPerformed
-        // TODO add your handling code here:
+        try{
+        ReciboSalida recibo = new ReciboSalida(Integer.parseInt(this.jTextFieldNumHab.getText()));
+        recibo.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        recibo.setVisible(true);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"Cuarto no valido o vacio");
+            
+        }
     }//GEN-LAST:event_jButtonSalidaActionPerformed
 
     private void jButtonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalirMouseClicked
