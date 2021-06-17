@@ -6,6 +6,8 @@
 package Jframes;
 
 
+import clasesChekin.PDF;
+import com.itextpdf.text.DocumentException;
 import controlMySql.MySqlConn;
 import java.awt.Image;
 import java.io.FileOutputStream;
@@ -36,7 +38,7 @@ public class ReciboSalida extends javax.swing.JFrame {
         initComponents();
     }
     
-    public ReciboSalida(int hab) {
+    public ReciboSalida(int hab) throws DocumentException {
         initComponents();
         int costo;
                 try {
@@ -101,6 +103,8 @@ public class ReciboSalida extends javax.swing.JFrame {
         au[10] = "Dias que se quedo en el hotel: "+this.jTextFielddiasquequedo.getText();
         au[11] = "Total a pagar sin costos extras: $"+this.jTextFieldcostosinextra.getText();
         au[12] = "Total a pagar con costos extras: $"+this.jTextFieldcostoconextra.getText();
+        
+        PDF p = new PDF(au);
         
     }
     
