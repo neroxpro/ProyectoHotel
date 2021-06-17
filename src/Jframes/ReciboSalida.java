@@ -159,15 +159,15 @@ public class ReciboSalida extends javax.swing.JFrame {
 
         jLabel2.setText("Ubicacion:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(140, 140, 49, 14);
+        jLabel2.setBounds(89, 140, 100, 14);
 
-        jLabel3.setText("Hombre del Huesped:");
+        jLabel3.setText("Nombre del Huesped:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(84, 162, 103, 14);
+        jLabel3.setBounds(33, 160, 140, 14);
 
         jLabel4.setText("Ciudad de origen:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(106, 202, 85, 14);
+        jLabel4.setBounds(55, 200, 120, 14);
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fecha de ingreso:");
@@ -177,7 +177,7 @@ public class ReciboSalida extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Fecha de salida:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(114, 271, 78, 14);
+        jLabel6.setBounds(72, 271, 120, 14);
 
         jLabel7.setText("Costo:");
         jPanel1.add(jLabel7);
@@ -186,7 +186,7 @@ public class ReciboSalida extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Tipo de habitacion:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(420, 270, 91, 14);
+        jLabel9.setBounds(420, 270, 130, 14);
 
         jLabel10.setText("Dias que se quedo en el hotel:");
         jPanel1.add(jLabel10);
@@ -215,39 +215,39 @@ public class ReciboSalida extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTextFieldNombre);
-        jTextFieldNombre.setBounds(210, 160, 317, 20);
+        jTextFieldNombre.setBounds(237, 160, 290, 30);
         jPanel1.add(jTextFieldCiudad);
-        jTextFieldCiudad.setBounds(210, 200, 317, 20);
+        jTextFieldCiudad.setBounds(237, 200, 290, 30);
         jPanel1.add(jTextFieldfechaing);
-        jTextFieldfechaing.setBounds(213, 234, 182, 20);
+        jTextFieldfechaing.setBounds(213, 234, 182, 30);
         jPanel1.add(jTextFieldfechasal);
-        jTextFieldfechasal.setBounds(213, 268, 182, 20);
+        jTextFieldfechasal.setBounds(213, 268, 182, 30);
         jPanel1.add(jTextFieldcosto);
-        jTextFieldcosto.setBounds(220, 320, 58, 20);
+        jTextFieldcosto.setBounds(220, 310, 58, 30);
         jPanel1.add(jTextFieldtipohab);
-        jTextFieldtipohab.setBounds(540, 270, 58, 20);
+        jTextFieldtipohab.setBounds(590, 270, 58, 30);
         jPanel1.add(jTextFielddiasquequedo);
-        jTextFielddiasquequedo.setBounds(480, 320, 58, 20);
+        jTextFielddiasquequedo.setBounds(480, 310, 58, 30);
         jPanel1.add(jTextFieldcostosinextra);
-        jTextFieldcostosinextra.setBounds(300, 350, 80, 20);
+        jTextFieldcostosinextra.setBounds(300, 350, 80, 30);
         jPanel1.add(jTextFieldcostoconextra);
-        jTextFieldcostoconextra.setBounds(580, 350, 70, 20);
+        jTextFieldcostoconextra.setBounds(580, 350, 70, 40);
 
         jLabel17.setText("Fecha del dia:");
         jPanel1.add(jLabel17);
         jLabel17.setBounds(140, 110, 90, 14);
         jPanel1.add(jTextFieldfechadia);
-        jTextFieldfechadia.setBounds(230, 110, 150, 20);
+        jTextFieldfechadia.setBounds(260, 100, 120, 30);
 
         jLabel14.setText("Gerente: Victor Fernando Ramirez Padilla");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(280, 470, 250, 14);
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(260, 380, 300, 140);
+        jLabel8.setBounds(240, 380, 300, 140);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo coco5.png"))); // NOI18N
         jPanel1.add(jLabel16);
-        jLabel16.setBounds(-10, 0, 750, 500);
+        jLabel16.setBounds(0, 0, 750, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
